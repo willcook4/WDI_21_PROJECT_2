@@ -1,0 +1,2 @@
+module AughtHelper
+end

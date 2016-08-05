@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aught</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if current_user %>
+        <%= current_user.username %>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <body>
+    <%= yield %>
+  </body>
+</html>
