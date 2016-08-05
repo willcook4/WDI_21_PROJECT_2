@@ -1,0 +1,14 @@
+rails new aught -d postgresql
+rails g model User username email first_name last_name profile_picture contact_number
+rails db:drop db:create db:migrate
+rails g controller Statics index
+rails g controller Aught index
+bundle
+rails generate devise:install
+rails generate devise User
+rails db:migrate
+rails g devise:views
+rails g controller User show index
+
+bundle
+rails g uploader ProfileImage
