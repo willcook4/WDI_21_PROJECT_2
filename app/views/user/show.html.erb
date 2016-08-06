@@ -1,6 +1,15 @@
 <h1>User#show</h1>
 <p>Find me in app/views/user/show.html.erb</p>
 
-<p><%= link_to 'Edit the profile', edit_user_registration_path(current_user) %></p>
-
+<h3>Anyone can see the following:</h3>
+<p>Username: <%= @user.username %><p>
+<p>Profile picture:</p>
 <%= image_tag @user.profile_image %>
+
+<h3>Only once you confirm a swap can the other party see the following:</h3>
+<p>* First name: <%= @user.first_name %><p>
+<p>* Last name: <%= @user.last_name %><p>
+<p>* email: <%= @user.email %><p>
+<p>* Contact Number: <%= @user.contact_number %></p>
+
+<p><%= link_to 'Edit the profile', edit_user_registration_path(current_user) %></p>

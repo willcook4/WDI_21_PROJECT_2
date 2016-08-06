@@ -1401,3 +1401,1129 @@ Processing by UserController#show as HTML
 Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/user2" for ::1 at 2016-08-06 08:03:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 222ms (Views: 177.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:10:07 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 29ms (Views: 23.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:11:18 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 08:11:20 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 26.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 08:11:23 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P22IWEK6kOarsVjAIz7tcZ1BEFkPh7JWH1ODo2ZTTLNIo/SSIMGE6J1lefJzEKyly8jk48kZV6q8OTg5AvsgAA=="}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 08:11:23 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-06 08:11:26 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-06 08:12:08 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gVQRtIInpxh6TSbPjwgvTsk36kUFDiBJ/MAegPFnMVASTBuD2sW6iKqJopnl8opNX6yhHu8vw/CTvTGc0+iP8Q==", "user"=>{"username"=>"peter", "first_name"=>"peter", "last_name"=>"peter", "contact_number"=>"993284328", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x007fc65b6969b8 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160806-15952-f265ns.png>, @original_filename="upload_7_28_2016_at_9_19_56_PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"upload_7_28_2016_at_9_19_56_PM.png\"\r\nContent-Type: image/png\r\n">, "email"=>"peter@peter.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peter@peter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "contact_number", "created_at", "updated_at", "email", "encrypted_password", "profile_image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "peter"], ["first_name", "peter"], ["last_name", "peter"], ["contact_number", "993284328"], ["created_at", 2016-08-06 07:12:08 UTC], ["updated_at", 2016-08-06 07:12:08 UTC], ["email", "peter@peter.com"], ["encrypted_password", "$2a$11$mr38zWTjIkJp4yeQclXj.OEkX40nGv59kpdIWm3soO5tsL.R.1/qy"], ["profile_image", "upload_7_28_2016_at_9_19_56_PM.png"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", 2016-08-06 07:12:08 UTC], ["sign_in_count", 1], ["current_sign_in_at", 2016-08-06 07:12:08 UTC], ["last_sign_in_at", 2016-08-06 07:12:08 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 190ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 08:12:08 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:12:15 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user1" for ::1 at 2016-08-06 08:12:22 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/user_controller.rb:3:in `show'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.5ms)
+Started GET "/user3" for ::1 at 2016-08-06 08:12:26 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:12:29 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:12:34 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3371338730854656240);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveProfilePictureFromUser (20160806072008)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" DROP "profile_picture"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806072008"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3371338730854656240)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/user3" for ::1 at 2016-08-06 08:49:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 229ms (Views: 190.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:49:24 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:49:26 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:49:28 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 08:49:28 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:49:31 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 53ms (Views: 46.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:49:44 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered user/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:55:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 211ms (Views: 162.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:56:05 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:56:09 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 21.7ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 08:56:11 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xhwp/P/XbHIhKhJLQ5eu5Qxs8tR6zVggJRsTggFt1iR2PfP2fTuuXAfChdcGWUyfq6rLYCJFi5RkHu+isfnh7Q=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 08:56:11 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 08:56:18 +0100
+Processing by AughtController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 08:56:18 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-08-06 08:56:24 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (8.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (95.1ms)
+Started GET "/user/1" for ::1 at 2016-08-06 08:56:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (4.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (103.8ms)
+Started GET "/users/1" for ::1 at 2016-08-06 08:56:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (5.1ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.0ms)
+Started GET "/users/sign_in" for ::1 at 2016-08-06 08:56:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-06 08:56:57 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v/MdW1fzE5WKNndmmyIFO06BjqdbRDtU3hE4APWdwkaV91+f1F6paO1FIh88P736SPdAudYV/uxaP2a0tHUYAA==", "user"=>{"email"=>"peter@peter.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "peter@peter.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-06 07:56:57 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-06 07:56:57 UTC], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 163ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 08:56:57 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 08:57:08 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:57:12 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 08:57:12 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 29.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 08:57:15 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 09:54:02 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 09:54:06 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 09:54:23 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 10:02:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.6ms)
+Started GET "/" for ::1 at 2016-08-06 10:02:18 +0100
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/statics_controller.rb:1:in `<top (required)>'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.0ms)
+Started GET "/" for ::1 at 2016-08-06 10:02:18 +0100
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:15: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/statics_controller.rb:1:in `<top (required)>'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.7ms)
+Started GET "/" for ::1 at 2016-08-06 10:03:26 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 225ms (Views: 211.3ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 10:03:29 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZmfmBcFl662/z+mgXbV2ySaKFRv/sBxSINpeXzLn1XVh4T2iL6+YJXuwx1zdK0Z6dm4a5oaYg1y5VjDpOwqWKQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:03:29 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 10:10:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 221ms (Views: 189.2ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-06 10:10:28 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R4fx+0g/EvKNGXbQJAM+kHhhMPeJFRkwjpSw5kX1qjCQ15ySSz0f8Hpept3DF3u8FaRpBT2n0MBGch2cyoCYFA==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-08-06 09:10:28 UTC], ["last_sign_in_at", 2016-08-06 07:00:32 UTC], ["sign_in_count", 3], ["updated_at", 2016-08-06 09:10:28 UTC], ["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 169ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 10:10:28 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 10:10:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/aught
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 10:10:42 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:10:44 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 10:10:45 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vr+A4BtMaCfwfHIotMl7UlMJDRe1atawuE/UE1lSzHSrkZH9xZb0bjElE4e7bLubo75KwulDOlGSahY2Jw8jow=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:10:45 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 10:10:49 +0100
+Processing by AughtController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 10:10:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-06 10:11:02 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gTfSjtxFAzCFD6P9fwUPuFdCRnIAxQvXkP3GFPQON4IiMX9CxP+2wXaV32pWJGMd23SYy5/CBTCYYa28VDJYDw==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-08-06 09:11:03 UTC], ["last_sign_in_at", 2016-08-06 09:10:28 UTC], ["sign_in_count", 4], ["updated_at", 2016-08-06 09:11:03 UTC], ["id", 2]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 158ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 10:11:03 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:11:06 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 20.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 10:11:10 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_authorization rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:11:10 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:11:13 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 22.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 10:11:16 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_authorization rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:11:16 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:13:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 216ms (Views: 193.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:13:40 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 10:13:43 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_authorization rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/user3" for ::1 at 2016-08-06 10:13:43 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_authorization rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:13:43 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:13:50 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 28.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user2/sfkwjnrf" for ::1 at 2016-08-06 10:14:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/user2/sfkwjnrf"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (4.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.6ms)
+Started GET "/user/index" for ::1 at 2016-08-06 10:14:18 +0100
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/index.html.erb within layouts/application
+  Rendered user/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:22:15 +0100
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 21.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:22:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 218ms (Views: 170.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:22:40 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:22:41 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:24:14 +0100
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 56.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:24:59 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ekrsejkfhwktw" for ::1 at 2016-08-06 10:26:22 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/ekrsejkfhwktw"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (6.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (98.9ms)
+Started GET "/" for ::1 at 2016-08-06 10:26:58 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:27:22 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (66.7ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_index_path_path' for #<#<Class:0x007fb3fc552c80>:0x007fb3ffc69480>):
+    2: <h4>This will be the Landing Page, available to anyone</h4>
+    3: <p>Find me in app/views/statics/index.html.erb</p>
+    4: 
+    5: <h3><%= link_to 'View the community', user_index_path_path %></h3>
+  
+app/views/statics/index.html.erb:5:in `_app_views_statics_index_html_erb__764215252127200231_70205533541960'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.2ms)
+Started GET "/" for ::1 at 2016-08-06 10:28:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 232ms (Views: 211.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:28:14 +0100
+Processing by UserController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 54ms (Views: 37.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:28:21 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-06 10:28:33 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c4wYtfClDi2MFSw+gCKRiJ2PDMv9d7SGbK3gEoLoHbyU747XYpO2WetSDNwn3LFR8fl5EMv98qzdLBTu5XfrbQ=="}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:28:33 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:28:40 +0100
+Processing by UserController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 10:28:40 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:29:25 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:29:27 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:29:33 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:29:37 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:29:40 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-06 10:29:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-06 10:29:55 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fdkZ7fnFuab7a0J3e985iPXSGQVwgianZW72IYpnYYBwXEjX+zaq5KbuI6a1eFq55GO83CRLbK0S737IhfG4Xw==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-08-06 09:29:55 UTC], ["last_sign_in_at", 2016-08-06 09:11:03 UTC], ["sign_in_count", 5], ["updated_at", 2016-08-06 09:29:55 UTC], ["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 159ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-06 10:29:55 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:30:02 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 21.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-06 10:30:47 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 19.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:31:56 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-06 10:32:02 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user3/" for ::1 at 2016-08-06 10:32:10 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :user_authorization rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 10:32:10 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
