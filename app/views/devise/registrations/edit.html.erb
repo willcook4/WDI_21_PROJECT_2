@@ -23,6 +23,11 @@
     <%= f.text_field :contact_number %>    
   </div>
 
+  <div class='field'>
+   <%= f.label :profile_image %><br />
+   <%= f.file_field :profile_image %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

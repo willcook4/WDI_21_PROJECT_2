@@ -12,3 +12,5 @@ rails g controller User show index
 
 bundle
 rails g uploader ProfileImage
+rails g migration AddProfileImageToUsers profile_image
+rails db:migrate
