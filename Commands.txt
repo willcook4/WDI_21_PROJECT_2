@@ -35,3 +35,14 @@ rails g controller Images
 
 # Multiple images with Carrierwave 
 http://bobintornado.github.io/rails/2015/12/29/Multiple-Images-Uploading-With-CarrierWave-and-PostgreSQL-Array.html
+
+rails g model Tag name
+
+rails db:drop db:create db:migrate db:seed
+
+# Create a new join table between tags and things
+# Remove the tag_id from things table via another migration
+# Update models to has and belongs to many things, has and belongs to many tags in models
+# Multiple select dropdown box for testing then try select2
+
+

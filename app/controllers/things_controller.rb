@@ -1,5 +1,6 @@
 class ThingsController < ApplicationController
   before_action :set_thing, only: [:show, :edit, :update]
+  before_action :authenticate_user!
 
   # GET /things
   # GET /things.json
@@ -10,6 +11,7 @@ class ThingsController < ApplicationController
   # GET /things/1
   # GET /things/1.json
   def show
+    @tags = Tag.all
     @thing = Thing.find(params[:id])
     @owner = @thing.owner_id
     @owners= User.find_by(id: @owner)
@@ -17,6 +19,7 @@ class ThingsController < ApplicationController
 
   # GET /things/new
   def new
+    @tags= Tag.all
     @thing = Thing.new
   end
 
@@ -76,7 +79,7 @@ class ThingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
-      params.require(:thing).permit(:title, :description, :owner_id, thing_images: [])
-      # , :loanee_id, :category_id, :user_id)
+      params.require(:thing).permit(:title, :description, :owner_id, :category_id, thing_images: [])
+      # , :loanee_id,  :user_id)
     end
 end

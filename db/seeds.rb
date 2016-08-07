@@ -8,3 +8,27 @@
 
 # Users
 user1 = User.create(username: "will", first_name: "Will", last_name: "Cookie", contact_number: "0123434553", email: "will@will.com", profile_image: "", password: "password")
+
+tag1 = Tag.create(name: "Antiques & collectables")
+tag2 = Tag.create(name: "Art")
+tag3 = Tag.create(name: "Baby Gear")
+tag4 = Tag.create(name: "Books")
+tag5 = Tag.create(name: "Childrens Toys")
+tag6 = Tag.create(name: "Building & Renovation")
+tag7 = Tag.create(name: "Business & Industry")
+tag8 = Tag.create(name: "Cars, Bikes & Boats")
+tag9 = Tag.create(name: "Clothing & Fashion")
+tag10 = Tag.create(name: "Electronics, Photography & Gaming")
+tag11 = Tag.create(name: "Health & Beauty")
+tag12 = Tag.create(name: "Home & Living")
+tag13 = Tag.create(name: "Movies & TV Shows")
+tag14 = Tag.create(name: "Music & Instruments")
+tag15 = Tag.create(name: "Pets & Animals")
+tag16 = Tag.create(name: "Pottery & glass")
+tag17 = Tag.create(name: "Real Estate & Meeting Rooms")
+tag18 = Tag.create(name: "Sports Equipment")
+tag19 = Tag.create(name: "Toys & Models")
+tag20 = Tag.create(name: "Travel, Events & Activities")
+tag21 = Tag.create(name: "Miscellaneous")
+
+

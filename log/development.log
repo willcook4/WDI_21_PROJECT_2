@@ -8981,3 +8981,642 @@ Processing by StaticsController#index as HTML
 Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.5ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (122.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "aught_development"[0m
+  [1m[35m (121.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "aught_test"[0m
+  [1m[35m (252.1ms)[0m  [1m[35mCREATE DATABASE "aught_development" ENCODING = 'unicode'[0m
+  [1m[35m (241.6ms)[0m  [1m[35mCREATE DATABASE "aught_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3371338730854656240);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160805112453)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "first_name" character varying, "last_name" character varying, "profile_picture" character varying, "contact_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805112453"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveEmailFromUsers (20160805124656)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" DROP "email"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805124656"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20160805124743)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" inet[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" inet[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805124743"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProfileImageToUsers (20160806063146)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_image" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806063146"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveProfilePictureFromUser (20160806072008)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP "profile_picture"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806072008"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThings (20160806105458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "things" ("id" serial primary key, "thing_image" character varying, "title" character varying, "description" text, "owner_id" character varying, "loanee_id" character varying, "category_id" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b9af16ffb5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_things_on_user_id" ON "things"  ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806105458"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJoinTableThingsToUsers (20160806113107)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "things_users" ("thing_id" integer, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806113107"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeThingImageToArray (20160807104257)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "things" DROP "thing_image"[0m
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "things" ADD "thing_images" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160807104257"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20160807143757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "tags" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160807143757"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3371338730854656240)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tags'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'things'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'things_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "contact_number", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "will"], ["first_name", "Will"], ["last_name", "Cookie"], ["contact_number", "0123434553"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC], ["email", "will@will.com"], ["encrypted_password", "$2a$11$YSQ7OsjnGqGCnBUHOhTEDeeGZa94kPJpatMHb2Kz0bc2Dpls.OExK"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Antiques & collectables"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Art"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Baby Gear"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Books"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Childrens Toys"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Building & Renovation"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Business & Industry"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cars, Bikes & Boats"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Clothing & Fashion"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Electronics, Photography & Gaming"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Health & Beauty"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Home & Living"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Movies & TV Shows"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Music & Instruments"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pets & Animals"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Pottery & glass"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Real Estate & Meeting Rooms"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sports Equipment"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Toys & Models"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Travel, Events & Activities"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Miscellaneous"], ["created_at", 2016-08-07 14:45:37 UTC], ["updated_at", 2016-08-07 14:45:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+Started GET "/things/new" for ::1 at 2016-08-07 15:58:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (36.0ms)
+  Rendered things/new.html.erb within layouts/application (38.6ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    32: 
+    33:   <div class="field">
+    34:     <%= f.label :category_id %>
+    35:     <%= f.collection_select @tags, :id, :name %>
+    36:   </div>
+    37: 
+    38:   <div class="actions">
+  
+app/views/things/_form.html.erb:35:in `block in _app_views_things__form_html_erb___1895511854068568082_70248839039240'
+app/views/things/_form.html.erb:1:in `_app_views_things__form_html_erb___1895511854068568082_70248839039240'
+app/views/things/new.html.erb:3:in `_app_views_things_new_html_erb___3051353377122509904_70248848460160'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.0ms)
+Started GET "/things/new" for ::1 at 2016-08-07 16:00:44 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (0.9ms)
+  Rendered things/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/things/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+app/views/things/_form.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/things/_form.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+app/views/things/new.html.erb:3:in `_app_views_things_new_html_erb___3051353377122509904_70248888637020'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.1ms)
+Started GET "/things/new" for ::1 at 2016-08-07 16:00:56 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered things/_form.html.erb (14.0ms)
+  Rendered things/new.html.erb within layouts/application (15.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 209.6ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/things" for ::1 at 2016-08-07 16:01:56 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pbacvb06IQ2dbfjJaJvSK5cpZSf9eGEu+yzFftKOkVbVW8czxSIKNIYJzTdz1GjE1OsqpvzUBo0f3ymn4hWkow==", "thing"=>{"title"=>"Lawnmower", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007fc8319c2a10 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-44255-1sai5ob.jpg>, @original_filename="jlawnmower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"jlawnmower.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"Lawnmower", "category_id"=>"12"}, "commit"=>"Create Thing"}
+Unpermitted parameter: category_id
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/things_controller.rb:33:in `create'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.9ms)
+Started POST "/things" for ::1 at 2016-08-07 16:02:44 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pbacvb06IQ2dbfjJaJvSK5cpZSf9eGEu+yzFftKOkVbVW8czxSIKNIYJzTdz1GjE1OsqpvzUBo0f3ymn4hWkow==", "thing"=>{"title"=>"Lawnmower", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007fc8321d3510 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-44255-ahbox.jpg>, @original_filename="jlawnmower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"jlawnmower.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"Lawnmower", "category_id"=>"12"}, "commit"=>"Create Thing"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 16:02:44 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 54ms (Views: 29.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 16:02:50 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 16:02:54 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-07 16:04:05 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IML6gRrWh4Y2rI4/Hq7Y2zQ6IV0uivLDOSNeeLuQexjxi4ApqEhMYb0hd8w8+SIWsF0eSUh+gpljpOhGtc5aeg==", "user"=>{"username"=>"ScreamingKiwi", "first_name"=>"Will", "last_name"=>"Cook", "contact_number"=>"02938375", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x007fc829f27418 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-44255-u9cnm2.jpg>, @original_filename="Will.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"Will.jpg\"\r\nContent-Type: image/jpeg\r\n">, "email"=>"will@will.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 199ms (Views: 32.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 16:04:11 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-07 16:04:18 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DPJJcw+8lLU0OQ99hpqWt2cSKaWJQHFhM5R5vOhz2acDM4weHrbEk1yRIfWE7VMQjPi5z75/s801ZCDZUxLtQ==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", 2016-08-07 15:04:18 UTC], ["last_sign_in_at", 2016-08-07 15:04:18 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", 2016-08-07 15:04:18 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 164ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 16:04:18 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 16:04:22 +0100
+Processing by ThingsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/new.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered things/_form.html.erb (9.9ms)
+  Rendered things/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 60ms (Views: 33.9ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/things" for ::1 at 2016-08-07 16:05:13 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4nbVs1HgXkhyZYj8UBTmBX//rbmzpt2PgV9Dp/gYipCX0t1bTvuFen+l4EuFUxCGQjjsqr64Yrkr8k+BBM/c/Q==", "thing"=>{"title"=>"Lawnmower", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007fc8321cc7d8 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-44255-j36fio.jpg>, @original_filename="jlawnmower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"jlawnmower.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"The lawnmower", "category_id"=>"12"}, "commit"=>"Create Thing"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "things" ("title", "description", "owner_id", "created_at", "updated_at", "thing_images") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lawnmower"], ["description", "The lawnmower"], ["owner_id", "1"], ["created_at", 2016-08-07 15:05:13 UTC], ["updated_at", 2016-08-07 15:05:13 UTC], ["thing_images", "{jlawnmower.jpg}"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 16:05:13 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/things/1/edit" for ::1 at 2016-08-07 16:05:40 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (4.1ms)
+  Rendered things/edit.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    32: 
+    33:   <div class="field">
+    34:     <%= f.label :category_id %>
+    35:     <%= f.collection_select(:category_id, @tags, :id, :name) %>
+    36:   </div>
+    37: 
+    38:   <div class="actions">
+  
+app/views/things/_form.html.erb:35:in `block in _app_views_things__form_html_erb___1895511854068568082_70248904602220'
+app/views/things/_form.html.erb:1:in `_app_views_things__form_html_erb___1895511854068568082_70248904602220'
+app/views/things/edit.html.erb:3:in `_app_views_things_edit_html_erb__3116222680191974598_70248863053740'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.6ms)
+Started GET "/things/1" for ::1 at 2016-08-07 16:05:44 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 16:05:58 +0100
+Processing by ThingsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 16:06:33 +0100
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/controllers/things_controller.rb:81: syntax error, unexpected ')', expecting =>):
+  
+app/controllers/things_controller.rb:81: syntax error, unexpected ')', expecting =>
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+Started GET "/things" for ::1 at 2016-08-07 16:06:59 +0100
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/controllers/things_controller.rb:81: syntax error, unexpected ')', expecting =>):
+  
+app/controllers/things_controller.rb:81: syntax error, unexpected ')', expecting =>
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.1ms)
+Started GET "/things" for ::1 at 2016-08-07 16:08:12 +0100
+Processing by ThingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 62ms (Views: 29.7ms | ActiveRecord: 7.6ms)
+
+
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+Started DELETE "/things/1" for ::1 at 2016-08-07 16:09:30 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vQMm/JCDiTiXIp+TpPwIyMqQJPjo98o7fJwl1uAVV3k21LbpDfnnM3aOVePaqBDXBvaQku0E5mUEajO2k4sRdw==", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mThing Load (0.2ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "things_users" WHERE "things_users"."thing_id" = $1[0m  [["thing_id", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things
+Completed 302 Found in 24ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 16:09:30 +0100
+Processing by ThingsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 16:09:32 +0100
+Processing by ThingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/new.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered things/_form.html.erb (13.5ms)
+  Rendered things/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 45ms (Views: 31.4ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/things" for ::1 at 2016-08-07 16:09:50 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JQ6Q5XZk5Eza4VxMQr+O0wXYLqh3VmABZHWc9PQYvJ5QqpgNaX8/ftchNPuX+HhQOB9vu3pI3zfO2JDSCM/q8w==", "thing"=>{"title"=>"Lawnmower", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007fc8348ab2c8 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-44255-dvczyd.jpg>, @original_filename="backyard-bbq.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"backyard-bbq.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"blah", "category_id"=>"13"}, "commit"=>"Create Thing"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "things" ("title", "description", "owner_id", "category_id", "created_at", "updated_at", "thing_images") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Lawnmower"], ["description", "blah"], ["owner_id", "1"], ["category_id", "13"], ["created_at", 2016-08-07 15:09:50 UTC], ["updated_at", 2016-08-07 15:09:50 UTC], ["thing_images", "{backyard-bbq.jpg}"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/2
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 16:09:50 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 38ms (Views: 30.3ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mThing Load (2.2ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+Started GET "/things/2" for ::1 at 2016-08-07 16:11:55 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.2ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 8.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for "13":String):
+    27: 
+    28: <p>
+    29:   <strong>Category:</strong>
+    30:   <%= @thing.category_id.name %>
+    31: </p>
+    32: 
+    33: 
+  
+app/views/things/show.html.erb:30:in `_app_views_things_show_html_erb__181384477913801576_70248930642240'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.9ms)
+Started GET "/things/2" for ::1 at 2016-08-07 16:12:08 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `category' for #<Thing:0x007fc835608830>):
+    27: 
+    28: <p>
+    29:   <strong>Category:</strong>
+    30:   <%= @thing.category.name %>
+    31: </p>
+    32: 
+    33: 
+  
+app/views/things/show.html.erb:30:in `_app_views_things_show_html_erb__181384477913801576_70248932836880'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.9ms)
+Started GET "/things/2" for ::1 at 2016-08-07 16:13:20 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `tag' for #<Thing:0x007fc831f482a0>):
+    27: 
+    28: <p>
+    29:   <strong>Category:</strong>
+    30:   <%= @thing.tag.name %>
+    31: </p>
+    32: 
+    33: 
+  
+app/views/things/show.html.erb:30:in `_app_views_things_show_html_erb__181384477913801576_70248905260640'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+Started GET "/things/2" for ::1 at 2016-08-07 16:19:25 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 25.1ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  [1m[36mTag Load (2.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
