@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :things
+  resources :things do 
+    resources :images, :only => [:create, :destroy]
+  end
   root "statics#index"
   devise_for :users
   get 'aught', to: "aught#index"

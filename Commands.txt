@@ -30,3 +30,8 @@ rails db:drop db:create db:migrate
 
 rails g uploader ThingImage 
 rails g migration ChangeThingImageToArray
+
+rails g controller Images
+
+# Multiple images with Carrierwave 
+http://bobintornado.github.io/rails/2015/12/29/Multiple-Images-Uploading-With-CarrierWave-and-PostgreSQL-Array.html

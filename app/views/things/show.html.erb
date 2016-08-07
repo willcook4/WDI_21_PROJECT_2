@@ -30,10 +30,29 @@
   <%= @thing.category_id %>
 </p>
 
-<!-- <p>
-  <strong>User:</strong>
-  erbtag= @thing.user erbtag
-</p> -->
+
+<% if current_user.id.to_s == @thing.owner_id %>
+  <%= "You Own this item and can edit it" %>
+  
+  <%= form_for @thing, url: thing_images_path(@thing), method: :post do |f| %>
+    <div class="field">
+      <%= f.file_field :thing_images, multiple: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <div>
+  <% @thing.thing_images.each_with_index do |image, index| %>
+    <div>
+      <%= image_tag(image.url) %>
+      <%= link_to "Delete this image", thing_image_path(@thing, index), :method => :delete, data: { confirm: "Are you sure?" } %>
+      <% end %> 
+  </div>
+
+<% else %>
+<% end %>
 
 <%= link_to 'Edit', edit_thing_path(@thing) %> |
 <%= link_to 'Back', things_path %>
