@@ -5230,3 +5230,2269 @@ app/controllers/things_controller.rb:64:in `destroy'
   Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.8ms)
+Started GET "/things" for ::1 at 2016-08-07 09:29:33 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:29:35 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:32:58 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `lin_to' for #<#<Class:0x007fd56a65c1a0>:0x007fd572617b10>):
+    13:         <li><%= link_to "Home", root_path %></li>
+    14:         <% if current_user %>
+    15:           <li><%= link_to "View Things", things_path %></li>
+    16:           <li><%= lin_to "New Share", new_thing_path %></li>
+    17:           <li><%= link_to current_user.username, user_path(current_user) %></li>
+    18:           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    19:         <% else %>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___308465749106442941_70277384279660'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+Started GET "/" for ::1 at 2016-08-07 09:33:07 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:33:11 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 09:33:13 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.3ms)
+  Rendered things/new.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-07 09:33:15 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 37.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-07 09:33:33 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user2" for ::1 at 2016-08-07 09:34:07 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...to "Your Profile: "current_user.username, user_path(current_...
+...                               ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:17: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+...name, user_path(current_user) );@output_buffer.safe_append='...
+...                               ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:19: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                      ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/layouts/application.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/layouts/application.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:17: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+app/views/layouts/application.html.erb:19: syntax error, unexpected keyword_else, expecting ')'
+app/views/layouts/application.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.7ms)
+Started GET "/user2" for ::1 at 2016-08-07 09:34:23 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:34:33 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-07 09:34:36 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 09:34:42 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZGMgQVFsIdqfU5l/jKLNCqcsmmqXv5W6zmR1rk1x0lfNGpyGx3urpr2OnxP0XhdwYFIehQj6VhyCncUd6mrp4Q=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:34:42 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 09:34:44 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-07 09:34:51 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sU8CkTzNCSvR+9TwxYdfYZdQXRImBSdbGf7ouonGOMTqx4zU8q8MBMWK1s+AeeHsku5HZBnnXlWVDiVb6SvypA==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-07 08:34:51 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-07 08:34:51 UTC], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 154ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 09:34:51 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user1" for ::1 at 2016-08-07 09:34:53 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit.1" for ::1 at 2016-08-07 09:34:55 +0100
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/users" for ::1 at 2016-08-07 09:35:06 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c635/wq4eslY5QCzvEVs0ZBEKgCgxcpj9AX6Ye0ub/kX1tqht7ILR1mB3DZkWzHaZ4A5oATdCYc91STRPmVj7g==", "user"=>{"username"=>"will", "first_name"=>"Will", "last_name"=>"Cookie", "contact_number"=>"0123434553", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x007fd57163a508 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-32882-cr0erk.jpg>, @original_filename="Will.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"Will.jpg\"\r\nContent-Type: image/jpeg\r\n">, "email"=>"will@will.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "profile_image" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["profile_image", "Will.jpg"], ["updated_at", 2016-08-07 08:35:06 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 172ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:35:06 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-07 09:35:10 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:35:19 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 09:35:42 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.8ms)
+  Rendered things/new.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user1" for ::1 at 2016-08-07 09:35:45 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 09:35:48 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.0ms)
+  Rendered things/new.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:35:49 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 09:35:53 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user1" for ::1 at 2016-08-07 09:36:04 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 26.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/edit.1" for ::1 at 2016-08-07 09:36:06 +0100
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users" for ::1 at 2016-08-07 09:36:22 +0100
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mxeM2muM0p8rgPKucgB4QJwegqsKJr0+D1zz/wCd5oP/bK+E1oajESrkLiuqHiVLa9qRC64+ftrGjC1P09bqlA==", "user"=>{"username"=>"ScreamingKiwi", "first_name"=>"Will", "last_name"=>"Cookie", "contact_number"=>"0123434553", "email"=>"will@will.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "ScreamingKiwi"], ["updated_at", 2016-08-07 08:36:22 UTC], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:36:22 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/index" for ::1 at 2016-08-07 09:36:27 +0100
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered user/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:36:32 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 09:36:34 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:36:40 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/1/edit" for ::1 at 2016-08-07 09:36:43 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.3ms)
+  Rendered things/edit.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/things/1" for ::1 at 2016-08-07 09:36:50 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gGnjti0PMdQMbvbbFAP5Ko9ud2p29Us4LP7KQy7ZjeIsGediz44O91iP+mUUtyuuLbxhV/1Zq95jFDFha/6xOw==", "thing"=>{"title"=>"Red BBQ title", "description"=>"Description", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "things" SET "description" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["description", "Description"], ["updated_at", 2016-08-07 08:36:50 UTC], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 09:36:50 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/things/1/edit" for ::1 at 2016-08-07 09:37:32 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.2ms)
+  Rendered things/edit.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/things/1" for ::1 at 2016-08-07 09:37:36 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hDI+AunOpC0WjHkomEYeVgoXZXb+yLmzksIgVFapriIoQjrWC0+bDkJtdZaY8szSqMVzS3VkWVXdKNt2E46S+w==", "thing"=>{"title"=>"Red BBQ title", "description"=>"Description", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 09:37:36 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:37:39 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/things/1" for ::1 at 2016-08-07 09:37:52 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yNtUr+2O8REwigS/nr8lmGXxz0R0yluagVRHe4teF9qsoHfxUISAnzHu2DpGoXiTkjXc5NDSmH5IhJnLWBUbzQ==", "id"=>"1"}
+  [1m[36mThing Load (0.2ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "things_users" WHERE "things_users"."users_id" = $1[0m  [["users_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column things_users.users_id does not exist
+LINE 1: DELETE FROM "things_users" WHERE "things_users"."users_id" =...
+                                         ^
+HINT:  Perhaps you meant to reference the column "things_users.user_id".
+: DELETE FROM "things_users" WHERE "things_users"."users_id" = $1):
+  
+app/controllers/things_controller.rb:64:in `destroy'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.1ms)
+Started GET "/things" for ::1 at 2016-08-07 09:37:57 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:38:00 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:38:37 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 09:38:39 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 09:38:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-07 09:39:01 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MiaRSHnLxY5ZjCp5pGwBzv1kI9vDB8D3ErzWxN8rda9zRWoZnWGqwAdYJ74umTfb/ufPL5Ek+K9FpnvrDgWdPA==", "user"=>{"email"=>"peter@peter.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "peter@peter.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-07 08:39:01 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-07 08:39:01 UTC], ["id", 2]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 168ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 09:39:01 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 09:39:03 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/things/4" for ::1 at 2016-08-07 09:39:06 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PODrrXEBHm94e35YCYYA8A5U7fyhuymZmFdINwO8JniAVblmx5L0ReHfCAEHK60qv8evtKAY5oV5WfdFeCbDSg==", "id"=>"4"}
+  [1m[36mThing Load (0.2ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "things_users" WHERE "things_users"."users_id" = $1[0m  [["users_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column things_users.users_id does not exist
+LINE 1: DELETE FROM "things_users" WHERE "things_users"."users_id" =...
+                                         ^
+HINT:  Perhaps you meant to reference the column "things_users.user_id".
+: DELETE FROM "things_users" WHERE "things_users"."users_id" = $1):
+  
+app/controllers/things_controller.rb:64:in `destroy'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.0ms)
+Started GET "/things" for ::1 at 2016-08-07 09:39:09 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 10:18:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 232.9ms | ActiveRecord: 7.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 10:18:32 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2gWikJ4leWawMmn3YHUKJ6jl6PdudSWEcjP3jFYF+PG+foHOIy8I6LFWtXK4a1csXyH7V8pt5mC74yk8hU705g=="}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 10:18:32 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 10:22:11 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 10:22:42 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 10:22:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-07 10:22:57 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w4zLlY/TomGzAC5IE1NunRGkAI3vG96GDSjKKMa0CyWAVVRnsFpt6pgnFSk0mhudFJytDEUQFso7VbVmDxFQFg==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-08-07 09:22:57 UTC], ["last_sign_in_at", 2016-08-07 08:34:51 UTC], ["sign_in_count", 3], ["updated_at", 2016-08-07 09:22:57 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 160ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 10:22:57 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 10:52:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 255ms (Views: 202.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 10:52:19 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 36.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/uploads/thing/thing_image/1/image" for ::1 at 2016-08-07 10:52:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/thing/thing_image/1/image"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (9.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (96.6ms)
+Started GET "/things/1/edit" for ::1 at 2016-08-07 10:58:05 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (11.3ms)
+  Rendered things/edit.html.erb within layouts/application (13.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/uploads/thing/thing_image/1/image" for ::1 at 2016-08-07 10:58:05 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/thing/thing_image/1/image"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.8ms)
+Started PATCH "/things/1" for ::1 at 2016-08-07 10:58:12 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8w4GkCgABmQKJkimgThIQMbUfLD7v455lJGCCUW+tvsGlxZlSUhg4gcf+c6ViaKOlroz0bNo3yD6MH5fv80i7A==", "thing"=>{"title"=>"Red BBQ title", "thing_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff779a034f8 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-35311-18dd7ax.jpg>, @original_filename="backyard-bbq.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_image]\"; filename=\"backyard-bbq.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Description", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"1"}
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "things" SET "thing_image" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["thing_image", "backyard-bbq.jpg"], ["updated_at", 2016-08-07 09:58:12 UTC], ["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 23ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 10:58:12 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 10:58:15 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things/4/edit" for ::1 at 2016-08-07 10:58:21 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mThing Load (1.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.3ms)
+  Rendered things/edit.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/things/4" for ::1 at 2016-08-07 10:58:27 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FqNJnBJVvZQhHPNvmTzlNiYTSeOpIKWr5z0h5rcVgN3OpC0qdAN0A+bR9rwZ6qzME5k5P+i8PJjWC6euAuvdyA==", "thing"=>{"title"=>"Baseball bat", "thing_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff781231a60 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-35311-9dt5oz.jpg>, @original_filename="baseball-bat.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_image]\"; filename=\"baseball-bat.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"Wooden", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"4"}
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "things" SET "thing_image" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["thing_image", "baseball-bat.jpg"], ["updated_at", 2016-08-07 09:58:27 UTC], ["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/4
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/things/4" for ::1 at 2016-08-07 10:58:27 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 10:58:36 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/3/edit" for ::1 at 2016-08-07 10:58:39 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.3ms)
+  Rendered things/edit.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/things/3" for ::1 at 2016-08-07 10:59:49 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7oNawxwnXPrRYxWooJCEZLkIlZuzll+BC/s+4D5CT3z3iEy936Acl55Wq56S2AMREr5jDGB866s9bICGec6tGw==", "thing"=>{"title"=>"Folding Deck Chair", "thing_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff77c9129b0 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-35311-x4e0y1.jpg>, @original_filename="deck-chair.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_image]\"; filename=\"deck-chair.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"slkdfm", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "things" SET "thing_image" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["thing_image", "deck-chair.jpg"], ["updated_at", 2016-08-07 09:59:49 UTC], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/3
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/things/3" for ::1 at 2016-08-07 10:59:49 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 10:59:51 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/things/2/edit" for ::1 at 2016-08-07 10:59:54 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.8ms)
+  Rendered things/edit.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/things/2" for ::1 at 2016-08-07 11:00:06 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HgGLc3d4GvikCNx/neRP4szqnnBlQIKuuyNjc1kZKHCOlDeo8q/6CIhMmgQavCpFHcoDb+rPKxFN/QipV50Kkg==", "thing"=>{"title"=>"Lawnmower", "thing_image"=>#<ActionDispatch::Http::UploadedFile:0x007ff78317d9f0 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-35311-3a4sg4.jpg>, @original_filename="jlawnmower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_image]\"; filename=\"jlawnmower.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"blah", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "things" SET "thing_image" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["thing_image", "jlawnmower.jpg"], ["updated_at", 2016-08-07 10:00:06 UTC], ["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/2
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 11:00:06 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 11:00:11 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/3" for ::1 at 2016-08-07 11:00:14 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/things/3/edit" for ::1 at 2016-08-07 11:00:19 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.7ms)
+  Rendered things/edit.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/things/3" for ::1 at 2016-08-07 11:01:30 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oGbRO0r2s7a6lXxf45EoD3Zh8PMJDnqYHvKRbsQVI6i5bcdFiXHz2/WgwmnR2a963dcGZNrkzrIoZS8Ig5nBzw==", "thing"=>{"title"=>"Folding Deck Chair", "description"=>"Red and white stripes", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "things" SET "description" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["description", "Red and white stripes"], ["updated_at", 2016-08-07 10:01:30 UTC], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/3
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/things/3" for ::1 at 2016-08-07 11:01:30 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 11:01:50 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things/4" for ::1 at 2016-08-07 11:02:05 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 11:02:50 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 11:03:06 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (130.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "aught_development"[0m
+  [1m[35m (116.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "aught_test"[0m
+  [1m[35m (329.4ms)[0m  [1m[35mCREATE DATABASE "aught_development" ENCODING = 'unicode'[0m
+  [1m[35m (244.2ms)[0m  [1m[35mCREATE DATABASE "aught_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3371338730854656240);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160805112453)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "first_name" character varying, "last_name" character varying, "profile_picture" character varying, "contact_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805112453"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveEmailFromUsers (20160805124656)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" DROP "email"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805124656"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20160805124743)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" inet[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" inet[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160805124743"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProfileImageToUsers (20160806063146)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_image" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806063146"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveProfilePictureFromUser (20160806072008)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP "profile_picture"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806072008"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThings (20160806105458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "things" ("id" serial primary key, "thing_image" character varying, "title" character varying, "description" text, "owner_id" character varying, "loanee_id" character varying, "category_id" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b9af16ffb5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_things_on_user_id" ON "things"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806105458"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJoinTableThingsToUsers (20160806113107)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "things_users" ("thing_id" integer, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160806113107"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeThingImageToArray (20160807104257)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "things" DROP "thing_image"[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "things" ADD "thing_images" character varying[] DEFAULT '{}'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160807104257"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-07 10:45:55 UTC], ["updated_at", 2016-08-07 10:45:55 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3371338730854656240)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'things'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'things_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/things" for ::1 at 2016-08-07 11:54:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 253ms (Views: 217.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 11:54:59 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 11:55:02 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 91ms (Views: 76.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 11:55:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 11:55:05 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-07 11:55:13 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mkjXV6rRq6MRcDfwGVGG9IVp8Eg2/eZgi+kszXbd4F4FsW1YpUEkDn9mXgI2jyEUIRtoKlC9DwPv+OiZxzgMfg==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 1.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mkjXV6rRq6MRcDfwGVGG9IVp8Eg2/eZgi+kszXbd4F4FsW1YpUEkDn9mXgI2jyEUIRtoKlC9DwPv+OiZxzgMfg==", "user"=>{"email"=>"will@will.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 199ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+Started GET "/users/sign_up" for ::1 at 2016-08-07 11:55:35 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-07 11:56:07 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2daXeDwNFxfv5A72kUQJQPut4XR0eU5qwOdHxBkhpqTDynrYw/wXlHAxI1ALPbmpr0IpqW+pu2H/92yg//MxBw==", "user"=>{"username"=>"screamingkiwi", "first_name"=>"Will", "last_name"=>"Cook", "contact_number"=>"0904385723", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x007fda2c753ab0 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-36949-1ksuqrf.jpg>, @original_filename="Will.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"Will.jpg\"\r\nContent-Type: image/jpeg\r\n">, "email"=>"will@will.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "will@will.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "contact_number", "created_at", "updated_at", "email", "encrypted_password", "profile_image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "screamingkiwi"], ["first_name", "Will"], ["last_name", "Cook"], ["contact_number", "0904385723"], ["created_at", 2016-08-07 10:56:07 UTC], ["updated_at", 2016-08-07 10:56:07 UTC], ["email", "will@will.com"], ["encrypted_password", "$2a$11$m/DqnVk5sOmZq1R/EvHOBOiMvbpTEWWR6lyANUYYqukaPB.8dIDAe"], ["profile_image", "Will.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", 2016-08-07 10:56:07 UTC], ["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 10:56:07 UTC], ["last_sign_in_at", 2016-08-07 10:56:07 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 166ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 11:56:07 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-07 11:56:14 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CXG5MT07zvzlx43z2NLsHbk8V5GWMQX9U1UoTGSm4+70CPjpgpGnkkbTnZn+45bgz34ikpgCv9C1fbX/wCzm1A=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-07 11:56:14 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-07 11:56:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-08-07 11:56:16 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-08-07 11:56:52 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Atf5h1A+QXw1GQRIOjtFQnEY80msR04vR56qpATN1pl9OKeEkQYsRzwU7AZgAD6kA5eeohWrjFil8PUya9GSmw==", "user"=>{"username"=>"Peterrabbit", "first_name"=>"Peter", "last_name"=>"Rabbit", "contact_number"=>"03495873", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x007fda3488a890 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-36949-k3cvej.png>, @original_filename="upload_7_28_2016_at_9_19_56_PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"upload_7_28_2016_at_9_19_56_PM.png\"\r\nContent-Type: image/png\r\n">, "email"=>"peter@peter.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "peter@peter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "contact_number", "created_at", "updated_at", "email", "encrypted_password", "profile_image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Peterrabbit"], ["first_name", "Peter"], ["last_name", "Rabbit"], ["contact_number", "03495873"], ["created_at", 2016-08-07 10:56:52 UTC], ["updated_at", 2016-08-07 10:56:52 UTC], ["email", "peter@peter.com"], ["encrypted_password", "$2a$11$.j3gUteIoO1Dy3BxAivOrOW1/vhRGTOgW8PAxbj1mlLFn.FXUWj0G"], ["profile_image", "upload_7_28_2016_at_9_19_56_PM.png"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", 2016-08-07 10:56:52 UTC], ["sign_in_count", 1], ["current_sign_in_at", 2016-08-07 10:56:52 UTC], ["last_sign_in_at", 2016-08-07 10:56:52 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/aught
+Completed 302 Found in 179ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/aught" for ::1 at 2016-08-07 11:56:52 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 11:56:55 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 11:56:57 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (7.0ms)
+  Rendered things/new.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 33.7ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/things" for ::1 at 2016-08-07 11:57:20 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"opEt17Ky0tNtOqzhjxcLc5UoGq0bq78yAiPYuh5U+UoaJQIgTG/pSopJtrYCKeawM8CzSj3JLaD6yitKj9UGaQ==", "thing"=>{"title"=>"BBQ", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007fda2abac140 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-36949-cjce1.jpg>, @original_filename="backyard-bbq.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"backyard-bbq.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x007fda2abac118 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-36949-1rh0xzz.jpg>, @original_filename="baseball-bat.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"baseball-bat.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"What a great...", "category_id"=>""}, "commit"=>"Create Thing"}
+Unpermitted parameter: category_id
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "things" ("title", "description", "owner_id", "created_at", "updated_at", "thing_images") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "BBQ"], ["description", "What a great..."], ["owner_id", "2"], ["created_at", 2016-08-07 10:57:20 UTC], ["updated_at", 2016-08-07 10:57:20 UTC], ["thing_images", "{#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>,#<ActionDispatch::Http::UploadedFile:0x007fda2abac118>}"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 13ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 11:57:20 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/show.html.erb:6: syntax error, unexpected '<'
+    <%= image_tag image 
+     ^
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/show.html.erb:43: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/will/development/Projects/WDI_21_PROJECT_2/app/views/things/show.html.erb:45: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/things/show.html.erb:6: syntax error, unexpected '<'
+app/views/things/show.html.erb:43: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/things/show.html.erb:45: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.8ms)
+Started GET "/things/new" for ::1 at 2016-08-07 11:57:29 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (3.0ms)
+  Rendered things/new.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mThing Load (3.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+Started GET "/things" for ::1 at 2016-08-07 11:58:10 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 11:58:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.6ms)
+Started GET "/things" for ::1 at 2016-08-07 11:58:35 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for "#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>":String):
+    20:     <% @things.each do |thing| %>
+    21:       <tr>
+    22:         <td>id: <%= thing.id%></td>
+    23:         <td> <%=image_tag thing.thing_images.first.url %></td>
+    24:         <td>Title: <%= thing.title %></td>
+    25:         <td>Description: <%= thing.description %></td>
+    26:         <td>Owner id: <%= thing.owner_id %></td>
+  
+app/views/things/index.html.erb:23:in `block in _app_views_things_index_html_erb___3276471440884954419_70287493670460'
+app/views/things/index.html.erb:20:in `_app_views_things_index_html_erb___3276471440884954419_70287493670460'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.1ms)
+Started GET "/things" for ::1 at 2016-08-07 11:59:07 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 11:59:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (8.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.0ms)
+Started GET "/things" for ::1 at 2016-08-07 12:00:41 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for "#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>":String):
+    20:     <% @things.each do |thing| %>
+    21:       <tr>
+    22:         <td>id: <%= thing.id%></td>
+    23:         <td> <%=image_tag thing.thing_images.first.url %></td>
+    24:         <td>Title: <%= thing.title %></td>
+    25:         <td>Description: <%= thing.description %></td>
+    26:         <td>Owner id: <%= thing.owner_id %></td>
+  
+app/views/things/index.html.erb:23:in `block in _app_views_things_index_html_erb___3276471440884954419_70287556697780'
+app/views/things/index.html.erb:20:in `_app_views_things_index_html_erb___3276471440884954419_70287556697780'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.6ms)
+Started GET "/things" for ::1 at 2016-08-07 12:00:51 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:00:52 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.4ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.8ms)
+Started GET "/images/" for ::1 at 2016-08-07 12:01:27 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.1ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.5ms)
+Started GET "/aught" for ::1 at 2016-08-07 12:02:05 +0100
+Processing by AughtController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering aught/index.html.erb within layouts/application
+  Rendered aught/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 12:02:07 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:02:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (6.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.7ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:02:11 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:02:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (4.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.4ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:02:37 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for "#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>":String):
+    3: <p>
+    4:   <strong>Thing image:</strong>
+    5:   <% @thing.thing_images.each do |image| %>
+    6:     <%= image_tag image.url %>
+    7:   <% end %>
+    8: </p>
+    9: 
+  
+app/views/things/show.html.erb:6:in `block in _app_views_things_show_html_erb__1920349756770071450_70287512226600'
+app/views/things/show.html.erb:5:in `each'
+app/views/things/show.html.erb:5:in `_app_views_things_show_html_erb__1920349756770071450_70287512226600'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.9ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:04:24 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:04:25 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (6.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.8ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:06:22 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Enumerator:0x007fda359a1e80>):
+    2: 
+    3: <p>
+    4:   <strong>Thing image:</strong>
+    5:   <% @thing.thing_images.each.url do |image| %>
+    6:     <%= image_tag(image) %>
+    7:   <% end %>
+    8: </p>
+  
+app/views/things/show.html.erb:5:in `_app_views_things_show_html_erb__1920349756770071450_70287576848920'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.1ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:06:37 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:06:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (5.1ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.0ms)
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mThing Load (4.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mThing Load (2.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/things/1" for ::1 at 2016-08-07 12:19:47 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for "#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>":String):
+    3: <p>
+    4:   <strong>Thing image:</strong>
+    5:   <% @thing.thing_images.each do |image| %>
+    6:     <%= image_tag(image.url) %>
+    7:   <% end %>
+    8: </p>
+    9: 
+  
+app/views/things/show.html.erb:6:in `block in _app_views_things_show_html_erb__1920349756770071450_70287497893900'
+app/views/things/show.html.erb:5:in `each'
+app/views/things/show.html.erb:5:in `_app_views_things_show_html_erb__1920349756770071450_70287497893900'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.5ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:20:10 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 12:21:11 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for "#<ActionDispatch::Http::UploadedFile:0x007fda2abac140>":String):
+    3: <p>
+    4:   <strong>Thing image:</strong>
+    5:   <% @thing.thing_images.each do |image| %>
+    6:     <%= image.url %>
+    7:   <% end %>
+    8: </p>
+    9: 
+  
+app/views/things/show.html.erb:6:in `block in _app_views_things_show_html_erb__1920349756770071450_70287498841500'
+app/views/things/show.html.erb:5:in `each'
+app/views/things/show.html.erb:5:in `_app_views_things_show_html_erb__1920349756770071450_70287498841500'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.9ms)
+Started GET "/things/1" for ::1 at 2016-08-07 12:21:27 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 12:29:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 262ms (Views: 187.8ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/things/1/edit" for ::1 at 2016-08-07 12:29:51 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (1.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (25.2ms)
+  Rendered things/edit.html.erb within layouts/application (27.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/things/1" for ::1 at 2016-08-07 12:30:00 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BdjClNQYtRDewhZKEd6a07BuMk5l/uTwHxEC04eOIDxtXacgq2HP+bQvBenWaLFsGPAD/Va3qr9aIeR7fktvuQ==", "thing"=>{"title"=>"BBQ", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007f83ea048498 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-37903-15yu6xl.jpg>, @original_filename="backyard-bbq.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"backyard-bbq.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f83ea048470 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-37903-ckmx00.jpg>, @original_filename="baseball-bat.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"baseball-bat.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"What a great...", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"1"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "things" SET "thing_images" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["thing_images", "{#<ActionDispatch::Http::UploadedFile:0x007f83ea048498>,#<ActionDispatch::Http::UploadedFile:0x007f83ea048470>}"], ["updated_at", 2016-08-07 11:30:00 UTC], ["id", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/1
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/things/1" for ::1 at 2016-08-07 12:30:00 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/things/1/edit" for ::1 at 2016-08-07 12:30:06 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mThing Load (1.1ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (28.3ms)
+  Rendered things/edit.html.erb within layouts/application (30.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 62.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 12:30:09 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (1.5ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:30:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (10.6ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (98.8ms)
+Started GET "/things" for ::1 at 2016-08-07 12:30:10 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/" for ::1 at 2016-08-07 12:30:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (7.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (95.1ms)
+Started DELETE "/things/1" for ::1 at 2016-08-07 12:30:13 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gb1katopPdeD4U4U0hALUIM3cbMU/jPAgYqcaFc1sRs3glUcOVTBrcX4F2mEE2+GDAe6DeoVnRM9WFFOhciXBg==", "id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "things_users" WHERE "things_users"."users_id" = $1[0m  [["users_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column things_users.users_id does not exist
+LINE 1: DELETE FROM "things_users" WHERE "things_users"."users_id" =...
+                                         ^
+HINT:  Perhaps you meant to reference the column "things_users.user_id".
+: DELETE FROM "things_users" WHERE "things_users"."users_id" = $1):
+  
+app/controllers/things_controller.rb:64:in `destroy'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.3ms)
+Started DELETE "/things/1" for ::1 at 2016-08-07 12:32:17 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gb1katopPdeD4U4U0hALUIM3cbMU/jPAgYqcaFc1sRs3glUcOVTBrcX4F2mEE2+GDAe6DeoVnRM9WFFOhciXBg==", "id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "things_users" WHERE "things_users"."thing_id" = $1[0m  [["thing_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `thing_image_will_change!' for #<Thing:0x007f83ed331dc8>):
+  
+app/controllers/things_controller.rb:64:in `destroy'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.6ms)
+Started DELETE "/things/1" for ::1 at 2016-08-07 12:33:19 +0100
+Processing by ThingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gb1katopPdeD4U4U0hALUIM3cbMU/jPAgYqcaFc1sRs3glUcOVTBrcX4F2mEE2+GDAe6DeoVnRM9WFFOhciXBg==", "id"=>"1"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Thing with 'id'=1):
+  
+app/controllers/things_controller.rb:61:in `destroy'
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/will/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.3ms)
+Started GET "/" for ::1 at 2016-08-07 12:33:25 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 42.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/things" for ::1 at 2016-08-07 12:33:28 +0100
+Processing by ThingsController#index as HTML
+  Rendering things/index.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  Rendered things/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/things/new" for ::1 at 2016-08-07 12:33:30 +0100
+Processing by ThingsController#new as HTML
+  Rendering things/new.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.8ms)
+  Rendered things/new.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/things" for ::1 at 2016-08-07 12:34:02 +0100
+Processing by ThingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhNIrJwMPtSwfnOLs2NtH+T50ybQ4BSKlpUwlmQrXugup2dbYtEFTVcNadw+XYDcQhF6wfaChhhufMNm9aqhyw==", "thing"=>{"title"=>"Lawnmower", "thing_images"=>[#<ActionDispatch::Http::UploadedFile:0x007f83ef36ea28 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-37903-52aznx.jpg>, @original_filename="jlawnmower.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"jlawnmower.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x007f83ef36ea00 @tempfile=#<Tempfile:/var/folders/s3/2km4p74j1_z0sj280736hj9c0000gn/T/RackMultipart20160807-37903-1j2erf.jpg>, @original_filename="ladder.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"thing[thing_images][]\"; filename=\"ladder.jpg\"\r\nContent-Type: image/jpeg\r\n">], "description"=>"Ladder is NOT for loan!", "category_id"=>""}, "commit"=>"Create Thing"}
+Unpermitted parameter: category_id
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "things" ("title", "description", "owner_id", "created_at", "updated_at", "thing_images") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Lawnmower"], ["description", "Ladder is NOT for loan!"], ["owner_id", "2"], ["created_at", 2016-08-07 11:34:02 UTC], ["updated_at", 2016-08-07 11:34:02 UTC], ["thing_images", "{jlawnmower.jpg,ladder.jpg}"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/2
+Completed 302 Found in 18ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 12:34:02 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 12:34:33 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/things/2/edit" for ::1 at 2016-08-07 12:35:59 +0100
+Processing by ThingsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/edit.html.erb within layouts/application
+  Rendered things/_form.html.erb (2.1ms)
+  Rendered things/edit.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/things/2" for ::1 at 2016-08-07 12:36:04 +0100
+Processing by ThingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qlh9DN5uWSiavUQEC0GmjACaDiKwM/3wa3Qxt7PZuyb5ExY5pqdnmz3X0PNaBUQ8nUfjcv+rr/POPoHtzoC80Q==", "thing"=>{"title"=>"Lawnmowers", "description"=>"Ladder is NOT for loan!", "category_id"=>""}, "commit"=>"Update Thing", "id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: category_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "things" SET "title" = $1, "updated_at" = $2 WHERE "things"."id" = $3[0m  [["title", "Lawnmowers"], ["updated_at", 2016-08-07 11:36:04 UTC], ["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/things/2
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 12:36:04 +0100
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/things/2" for ::1 at 2016-08-07 12:40:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mThing Load (1.1ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering things/show.html.erb within layouts/application
+  Rendered things/show.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 185.5ms | ActiveRecord: 12.6ms)
+
+

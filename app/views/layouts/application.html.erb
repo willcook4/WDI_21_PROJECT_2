@@ -12,7 +12,9 @@
       <ul>
         <li><%= link_to "Home", root_path %></li>
         <% if current_user %>
-          <li><%= link_to current_user.username, user_path(current_user) %></li>
+          <li><%= link_to "View Things", things_path %></li>
+          <li><%= link_to "New Share", new_thing_path %></li>
+          <li><%= link_to "Your Profile: "+current_user.username, user_path(current_user) %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>

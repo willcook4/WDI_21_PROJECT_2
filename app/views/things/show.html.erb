@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Thing image:</strong>
-  <%= @thing.thing_image %>
+  <% @thing.thing_images.each do |image| %>
+    <%= image_tag(image) %>
+  <% end %>
 </p>
 
 <p>

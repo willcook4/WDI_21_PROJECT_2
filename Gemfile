@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-# CarrierWave
-gem 'carrierwave', '~> 0.11.2'
+# CarrierWave, from github for multiple file uploads
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+# CarrierWave 
+# gem 'carrierwave', '~> 0.11.2'
 # Devise 
 gem 'devise', '4.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
