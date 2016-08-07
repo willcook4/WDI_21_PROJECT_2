@@ -14,3 +14,13 @@ bundle
 rails g uploader ProfileImage
 rails g migration AddProfileImageToUsers profile_image
 rails db:migrate
+
+# Had to add requires carrierwave into config/application.rb as per:
+http://stackoverflow.com/questions/25712027/nameerror-uninitialized-constant-articleimageuploader-when-using-carrierwave
+
+rails g scaffold Thing thing_image title description:text owner_id loanee_id category_id user:references
+
+rails g migration AddJoinTableThingsToUsers
+rails db:drop db:create db:migrate   
+
+# Do I need: has_many :things, dependent: :destroy in the modle for user to sort out the foreign keys on delete?

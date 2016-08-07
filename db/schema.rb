@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806072008) do
+ActiveRecord::Schema.define(version: 20160806113107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "things", force: :cascade do |t|
+    t.string   "thing_image"
+    t.string   "title"
+    t.text     "description"
+    t.string   "owner_id"
+    t.string   "loanee_id"
+    t.string   "category_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_things_on_user_id", using: :btree
+  end
+
+  create_table "things_users", id: false, force: :cascade do |t|
+    t.integer "thing_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -37,4 +55,5 @@ ActiveRecord::Schema.define(version: 20160806072008) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "things", "users"
 end

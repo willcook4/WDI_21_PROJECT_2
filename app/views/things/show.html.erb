@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Thing image:</strong>
+  <%= @thing.thing_image %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @thing.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @thing.description %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @owners.username %>
+</p>
+
+<p>
+  <strong>Loanee:</strong>
+  <%= @thing.loanee_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @thing.category_id %>
+</p>
+
+<!-- <p>
+  <strong>User:</strong>
+  erbtag= @thing.user erbtag
+</p> -->
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>
