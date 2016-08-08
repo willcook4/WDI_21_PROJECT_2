@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_many :things
+  has_and_belongs_to_many :things
 end

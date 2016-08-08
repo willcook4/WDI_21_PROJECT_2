@@ -27,9 +27,10 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @thing.category_id %>
+  <% @thing.tag_ids.each do |tag| %>
+    <%= @tags.find(tag).name + ", " %>
+  <% end %>
 </p>
-
 
 <% if current_user.id.to_s == @thing.owner_id %>
   <%= "You Own this item and can edit it" %>

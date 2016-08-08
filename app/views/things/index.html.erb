@@ -23,10 +23,18 @@
         <td>Description: <%= thing.description %></td>
         <td>Owner id: <%= thing.owner_id %></td>
         <td> thing.loanee_id </td>
-        <td>Category: <%= thing.category_id %></td>
+
+        <td><% thing.tag_ids.each do |tag| %>
+              <%= @tags.find(tag).name + ", " %>
+            <% end %>
+        </td>
         <td><%= link_to 'Show', thing %></td>
+
+        <% if current_user.id.to_s == thing.owner_id %>
+          <!-- You Own this item and can edit it -->
         <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
         <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

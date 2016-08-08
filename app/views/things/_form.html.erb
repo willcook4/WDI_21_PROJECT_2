@@ -31,8 +31,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_id %>
-    <%= f.collection_select(:category_id, @tags, :id, :name) %>
+    <%= f.label :tag_ids %>
+    <%= f.collection_select(:tag_ids, @tags, :id, :name, {}, multiple: true) %>
   </div>
 
   <div class="actions">
