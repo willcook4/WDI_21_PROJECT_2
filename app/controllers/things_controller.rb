@@ -1,7 +1,8 @@
 class ThingsController < ApplicationController
   before_action :set_thing, only: [:show, :edit, :update]
   before_action :authenticate_user!
-  
+
+
 
   # GET /things
   # GET /things.json
@@ -27,7 +28,21 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
-    @tags= Tag.all
+    # if current_user.id == @thing.owner_id
+    #   @tags= Tag.all
+    #   # redirect_to edit_thing_path
+    #   flash[:success] = "You Own this item and can edit it"
+    # else
+    #   redirect_to things_path
+    # end
+    @thing = Thing.find(params[:id])
+    if current_user.id == @thing.user_id
+     puts "Loading page"
+     flash[:success] = "You Own this item and can edit it"
+    else 
+      redirect_to thing_path
+      puts "Can't load page"
+    end
   end
 
   # POST /things

@@ -33,7 +33,6 @@
 </p>
 
 <% if current_user.id.to_s == @thing.owner_id %>
-  <%= "You Own this item and can edit it" %>
   
   <%= form_for @thing, url: thing_images_path(@thing), method: :post do |f| %>
     <div class="field">
@@ -52,8 +51,9 @@
       <% end %> 
   </div>
 
+  <%= link_to 'Edit', edit_thing_path(@thing) %>
+
 <% else %>
 <% end %>
 
-<%= link_to 'Edit', edit_thing_path(@thing) %> |
 <%= link_to 'Back', things_path %>

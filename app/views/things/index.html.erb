@@ -28,7 +28,7 @@
               <%= @tags.find(tag).name + ", " %>
             <% end %>
         </td>
-        <td><%= link_to 'Show', thing %></td>
+        <td><%= link_to 'Show', thing_path(thing) %></td>
 
         <% if current_user.id.to_s == thing.owner_id %>
           <!-- You Own this item and can edit it -->

@@ -49,10 +49,14 @@ rails db:drop db:create db:migrate db:seed
 
 MIKE/CHANSE,
 
-- SELECT2?
-- 
+- Flash Messages
+- Restrict Users to only their content...?
+
+
+
+Doing... && To Do...
 
 /tags/:id
-
+rails g controller Tag
 
 

@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+["users", "things", "tags", "tags_things", "things_users"].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table_name} RESTART IDENTITY CASCADE")
+end
+
 # Users
-user1 = User.create(username: "will", first_name: "Will", last_name: "Cookie", contact_number: "0123434553", email: "will@will.com", profile_image: "", password: "password")
+user1 = User.create(username: "will", first_name: "Will", last_name: "Cookie", contact_number: "0123434553", email: "will@will.com", profile_image: "", password: "password", password_confirmation: "password")
+
+user2 = User.create(username: "mickyg", first_name: "Mike", last_name: "Hayden", contact_number: "0123434553", email: "mike@ga.co", profile_image: "", password: "password", password_confirmation: "password")
 
 tag1 = Tag.create(name: "Antiques & collectables")
 tag2 = Tag.create(name: "Art")
@@ -31,4 +37,4 @@ tag19 = Tag.create(name: "Toys & Models")
 tag20 = Tag.create(name: "Travel, Events & Activities")
 tag21 = Tag.create(name: "Miscellaneous")
 
-
+thing1 = Thing.create(title: "New thing", description: "Its amazing", user_id: user1.id, thing_images: ["http://www.fillmurray.com//300/300"])                                                                                                           

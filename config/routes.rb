@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get 'user:id/', to: 'user#show', as: "user"
   get 'user/index', to: 'user#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'tag/index', to: 'tag#index'
+  get 'tag/tag:id', to: 'tag#show', as: "tag"
 end
