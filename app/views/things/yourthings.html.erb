@@ -1,14 +1,19 @@
 <h1>Things Your Sharing...</h1>
 
-<% @things.each do |thing| %>
-  <%= link_to thing_path(thing.id) do  %>
-  <div>
-    <% thing.thing_images.each do |image| %>
-      <%= image_tag(image) %>
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    <% @things.each do |thing| %>
+    <%= link_to thing_path(thing.id) do  %>
+    <div class="card">
+      <%= image_tag thing.thing_images.first, {:class => "card-img-top"} %>
+      <div class="card-block">
+        <h4 class="card-title"><%= thing.title %></h4>
+        <p class="card-text"><%= thing.description %></p>
+      </div>
+    </div>
     <% end %>
-    <p><%= thing.title %></p>
+    <% end %>
   </div>
-        
-<% end %>
-<% end %>
+</div>
+
 <%= link_to 'New Thing', new_thing_path %>

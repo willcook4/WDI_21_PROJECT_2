@@ -1,4 +1,5 @@
 <h1>Inbox</h1>
+<h5>Message from:</h5>
 <ul>
   <% @conversations.each do |conversation| %>
     <li><%= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation) %>

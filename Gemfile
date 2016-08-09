@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-# Bootstrap v4 (alpha)
-gem 'bootstrap',
-    
-source 'https://rails-assets.org' do
-    gem 'rails-assets-tether', '>= 1.1.0'
-end
-
+# Bootstrap v4 Alpha
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'rails-assets-tether', '>= 1.1.0'
 # CarrierWave, from github for multiple file uploads
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # CarrierWave 
@@ -41,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

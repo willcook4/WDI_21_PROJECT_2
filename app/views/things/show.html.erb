@@ -1,5 +1,4 @@
 <p>
-  <strong>Thing image:</strong>
   <% @thing.thing_images.each do |image| %>
     <%= image_tag(image) %>
   <% end %>
@@ -31,8 +30,9 @@
   <%= link_to "Message Owner", conversation_messages_path(@thing.user_id, current_user.id) %>
 </p>
 
+<%= link_to '< Back', things_path %>
+
 <% if current_user.id == @thing.user_id %>
   <%= link_to 'Edit', edit_thing_path(@thing) %>
 <% end %>
 
-<%= link_to 'Back', things_path %>

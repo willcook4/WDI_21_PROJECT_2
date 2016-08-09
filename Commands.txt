@@ -52,8 +52,7 @@ rails g model Message body:text conversation:references user:references read:boo
 rails g controller conversations index
 
 MIKE/CHANSE,
-
-/tags/:id show page not working
+- Messages not working from the show page...
 
 
 Doing... && To Do...

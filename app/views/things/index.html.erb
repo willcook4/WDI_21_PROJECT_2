@@ -1,4 +1,22 @@
-<h1>Things</h1>
+<h1>Things you can borrow...</h1>
+
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    <% @things.each do |thing| %>
+    <%= link_to thing_path(thing.id) do  %>
+    <div class="card">
+      <%= image_tag thing.thing_images.first, {:class => "card-img-top"} %>
+      <div class="card-block">
+        <h4 class="card-title"><%= thing.title %></h4>
+        <p class="card-text"><%= thing.description %></p>
+        <p class="card-text"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
 
 <table>
   <thead>

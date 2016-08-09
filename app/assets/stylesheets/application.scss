@@ -13,7 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
+a:hover {
+  background-color: white;
+  text-decoration: none;
+}
 
 img {
-  max-width: 300px;
+  width: 300px;
+  height: 200px;
+}
+
+//// Show Page
+
+// Card image width
+.card-img-top {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
 }
