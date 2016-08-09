@@ -21,39 +21,18 @@
 </p>
 
 <p>
-  <!-- <strong>Loanee:</strong> -->
-  <%#= @thing.loanees %>
-</p>
-
-<p>
   <strong>Category:</strong>
   <% @thing.tag_ids.each do |tag| %>
     <%= @tags.find(tag).name + ", " %>
   <% end %>
 </p>
 
+<p>
+  <%= link_to "Message Owner", conversation_messages_path(@thing.user_id, current_user.id) %>
+</p>
+
 <% if current_user.id == @thing.user_id %>
-  
-  <%= form_for @thing, url: thing_images_path(@thing), method: :post do |f| %>
-    <div class="field">
-      <%= f.file_field :thing_images, multiple: true %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-
-  <div>
-  <% @thing.thing_images.each_with_index do |image, index| %>
-    <div>
-      <%= image_tag(image.url) %>
-      <%= link_to "Delete this image", thing_image_path(@thing, index), :method => :delete, data: { confirm: "Are you sure?" } %>
-      <% end %> 
-  </div>
-
   <%= link_to 'Edit', edit_thing_path(@thing) %>
-
-<% else %>
 <% end %>
 
 <%= link_to 'Back', things_path %>

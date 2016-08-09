@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
+# Bootstrap v4 (alpha)
+gem 'bootstrap',
+    
+source 'https://rails-assets.org' do
+    gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 # CarrierWave, from github for multiple file uploads
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-
 # CarrierWave 
 # gem 'carrierwave', '~> 0.11.2'
 # Devise 

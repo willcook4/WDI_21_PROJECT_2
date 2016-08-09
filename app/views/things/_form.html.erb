@@ -18,9 +18,9 @@
 
   <div class="field">
     <%= f.label :thing_images %>
-    <% if thing.thing_images.each do |image| %>
+    <% thing.thing_images.each.with_index do |image, index| %>
       <%= image_tag(image) %>
-    <% end %> 
+      <%= check_box_tag 'images_to_delete[]', index %> Delete?
     <% end %>
     <%= f.file_field :thing_images, multiple: true %>
   </div>

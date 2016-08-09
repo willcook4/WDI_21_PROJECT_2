@@ -46,17 +46,17 @@ rails db:drop db:create db:migrate db:seed
 # Update models to has and belongs to many things, has and belongs to many tags in models
 # Multiple select dropdown box for testing then try select2
 
+rails g migration CreateConversations
+touch app/models/conversation.rb
+rails g model Message body:text conversation:references user:references read:boolean
+rails g controller conversations index
 
 MIKE/CHANSE,
 
-- Flash Messages
-- Restrict Users to only their content...?
-
+/tags/:id show page not working
 
 
 Doing... && To Do...
-
-/tags/:id
-rails g controller Tag
+/tags/:id show page not working
 
 

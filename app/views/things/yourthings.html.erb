@@ -1,0 +1,14 @@
+<h1>Things Your Sharing...</h1>
+
+<% @things.each do |thing| %>
+  <%= link_to thing_path(thing.id) do  %>
+  <div>
+    <% thing.thing_images.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
+    <p><%= thing.title %></p>
+  </div>
+        
+<% end %>
+<% end %>
+<%= link_to 'New Thing', new_thing_path %>

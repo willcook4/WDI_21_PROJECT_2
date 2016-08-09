@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'things/yours', to: "things#yourthings"
+
   resources :things do 
     resources :images, :only => [:create, :destroy]
   end
@@ -13,4 +15,8 @@ Rails.application.routes.draw do
 
   get 'tag/index', to: 'tag#index'
   get 'tag/tag:id', to: 'tag#show', as: "tag"
+
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
 end

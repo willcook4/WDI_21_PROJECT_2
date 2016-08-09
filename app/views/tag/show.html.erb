@@ -1,9 +1,14 @@
 <h1><%= @tag.name %></h1>
 
-<%= @thing %>
-
 <ul>
-<% @thing.each do |thing| %>
-  <li><%= thing.description %></li>
-<% end %>
+  <% @tag.things.each do |thing| %>
+  <li>
+    <%= link_to thing_path(thing.id) do %>
+    <div>
+      <h5><%= thing.title %></h5>
+      <h5><%= thing.description %></h5>
+    </div>
+    <% end %>
+  </li>
+  <% end %>
 </ul>

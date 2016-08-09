@@ -3,6 +3,10 @@ class ThingsController < ApplicationController
   before_action :authenticate_user!
 
 
+  # GET/things/yours
+  def yourthings
+    @things = Thing.where(:user_id => current_user.id)
+  end
 
   # GET /things
   # GET /things.json
@@ -32,6 +36,7 @@ class ThingsController < ApplicationController
     if current_user.id == @thing.user_id
       @tags= Tag.all
       @thing = Thing.find(params[:id])
+      # @thing.thing_images
       puts "Loading page"
       flash[:success] = "You Own this item and can edit it"
     else 
@@ -61,6 +66,22 @@ class ThingsController < ApplicationController
   # PATCH/PUT /things/1
   # PATCH/PUT /things/1.json
   def update
+
+    image_array = @thing.thing_images
+
+    if params[:images_to_delete]
+      params[:images_to_delete].each do |index|
+        deleted_image = image_array.delete_at(index.to_i)
+        deleted_image.try(:remove!)
+      end
+    end
+
+    if params[:thing][:thing_images].present?
+      image_array += params[:thing][:thing_images]
+    end
+
+    @thing.thing_images = image_array
+
     respond_to do |format|
       if @thing.update(thing_params)
         format.html { redirect_to @thing, notice: 'Thing was successfully updated.' }
@@ -93,6 +114,6 @@ class ThingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
-      params.require(:thing).permit(:title, :description, :category_id, {tag_ids: []}, {thing_images: []}, :user_id)
+      params.require(:thing).permit(:title, :description, :category_id, :user_id, tag_ids: [])
     end
 end
