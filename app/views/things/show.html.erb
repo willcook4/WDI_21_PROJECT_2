@@ -17,12 +17,12 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @owners.username %>
+  <%= @thing.owner.username %>
 </p>
 
 <p>
-  <strong>Loanee:</strong>
-  <%= @thing.loanee_id %>
+  <!-- <strong>Loanee:</strong> -->
+  <%#= @thing.loanees %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
   <% end %>
 </p>
 
-<% if current_user.id.to_s == @thing.owner_id %>
+<% if current_user.id == @thing.user_id %>
   
   <%= form_for @thing, url: thing_images_path(@thing), method: :post do |f| %>
     <div class="field">

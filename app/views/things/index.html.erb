@@ -8,7 +8,6 @@
       <th>Title</th>
       <th>Description</th>
       <th>Owner</th>
-      <th>Loanee</th>
       <th>Category</th>
       <th colspan="3"></th>
     </tr>
@@ -18,22 +17,25 @@
     <% @things.each do |thing| %>
       <tr>
         <td>id: <%= thing.id%></td>
-        <td> <%=image_tag thing.thing_images.first %></td>
+        <td> <%= image_tag thing.thing_images.first %></td>
         <td>Title: <%= thing.title %></td>
         <td>Description: <%= thing.description %></td>
-        <td>Owner id: <%= thing.owner_id %></td>
-        <td> thing.loanee_id </td>
-
+        <td>Owner: <%= @users.find(thing.owner.id).username %></td>
+        
         <td><% thing.tag_ids.each do |tag| %>
               <%= @tags.find(tag).name + ", " %>
             <% end %>
         </td>
+        <% if current_user.id == thing.owner.id %>
+          <td>Loanee: thing.loanee_id </td>
+        <% end %>
+        
         <td><%= link_to 'Show', thing_path(thing) %></td>
 
-        <% if current_user.id.to_s == thing.owner_id %>
+        <% if current_user.id == thing.owner.id %>
           <!-- You Own this item and can edit it -->
-        <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
-        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+          <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

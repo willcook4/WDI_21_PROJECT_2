@@ -36,5 +36,4 @@ tag18 = Tag.create(name: "Sports Equipment")
 tag19 = Tag.create(name: "Toys & Models")
 tag20 = Tag.create(name: "Travel, Events & Activities")
 tag21 = Tag.create(name: "Miscellaneous")
-
-thing1 = Thing.create(title: "New thing", description: "Its amazing", user_id: user1.id, thing_images: ["http://www.fillmurray.com//300/300"])                                                                                                           
+                                                                                                        

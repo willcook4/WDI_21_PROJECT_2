@@ -9,6 +9,7 @@ class ThingsController < ApplicationController
   def index
     @tags = Tag.all
     @things = Thing.all
+    @users = User.all
   end
 
   # GET /things/1
@@ -16,8 +17,8 @@ class ThingsController < ApplicationController
   def show
     @tags = Tag.all
     @thing = Thing.find(params[:id])
-    @owner = @thing.owner_id
-    @owners= User.find_by(id: @owner)
+    #@owner = @thing.owner
+    #@owners= User.find_by(id: @owner)
   end
 
   # GET /things/new
@@ -28,19 +29,14 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
-    # if current_user.id == @thing.owner_id
-    #   @tags= Tag.all
-    #   # redirect_to edit_thing_path
-    #   flash[:success] = "You Own this item and can edit it"
-    # else
-    #   redirect_to things_path
-    # end
-    @thing = Thing.find(params[:id])
     if current_user.id == @thing.user_id
-     puts "Loading page"
-     flash[:success] = "You Own this item and can edit it"
+      @tags= Tag.all
+      @thing = Thing.find(params[:id])
+      puts "Loading page"
+      flash[:success] = "You Own this item and can edit it"
     else 
       redirect_to thing_path
+      flash[:notice] = "You do not own this item so you can't edit it. If you have issue with something here take it up with the owner"
       puts "Can't load page"
     end
   end
@@ -50,7 +46,7 @@ class ThingsController < ApplicationController
   def create
 
     @thing = Thing.new(thing_params)
-    @thing.owner_id = current_user.id
+    @thing.user_id = current_user.id
     respond_to do |format|
       if @thing.save
         format.html { redirect_to @thing, notice: 'Thing was successfully created.' }
@@ -97,7 +93,6 @@ class ThingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
-      params.require(:thing).permit(:title, :description, :owner_id, :category_id, {tag_ids: []}, {thing_images: []})
-      # , :loanee_id,  :user_id)
+      params.require(:thing).permit(:title, :description, :category_id, {tag_ids: []}, {thing_images: []}, :user_id)
     end
 end
