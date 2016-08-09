@@ -6,6 +6,6 @@ class TagController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @things = Things.find
+    @thing = Thing.where(:tag_ids => params[:id])
   end
 end

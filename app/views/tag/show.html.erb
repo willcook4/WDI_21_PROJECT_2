@@ -1,2 +1,9 @@
-<h1>Show page for a tag</h1>
+<h1><%= @tag.name %></h1>
 
+<%= @thing %>
+
+<ul>
+<% @thing.each do |thing| %>
+  <li><%= thing.description %></li>
+<% end %>
+</ul>

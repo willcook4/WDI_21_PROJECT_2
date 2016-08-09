@@ -8,7 +8,7 @@ class UserController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(:username)
   end
 
   def user_params
