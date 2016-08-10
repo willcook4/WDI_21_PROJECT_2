@@ -1,65 +1,24 @@
-<h1>Things you can borrow...</h1>
-
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-    <% @things.each do |thing| %>
-    <%= link_to thing_path(thing.id) do  %>
-    <div class="card">
-      <%= image_tag thing.thing_images.first, {:class => "card-img-top"} %>
-      <div class="card-block">
-        <h4 class="card-title"><%= thing.title %></h4>
-        <p class="card-text"><%= thing.description %></p>
-        <p class="card-text"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
+<div class="subform">
+  <h2 class="pageheading">Things you can borrow...</h2>
+  <div class="container">
+    <div class="card-deck-wrapper">
+      <div class="card-deck">
+        <% @things.each do |thing| %>
+        <%= link_to thing_path(thing.id) do  %>
+        <div class="card">
+          <%= image_tag thing.thing_images.first.sized, {:class => "card-img-top"} %>
+          <div class="card-block">
+            <h4 class="card-title"><%= thing.title %></h4>
+            <p class="card-text"><%= thing.description %></p>
+            <p class="card-text"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
-    <% end %>
-    <% end %>
+
+    <%= link_to 'New Share', new_thing_path, { :class => "btn btn-primary", :id => "registerbtn" } %>
+
   </div>
 </div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Owner</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @things.each do |thing| %>
-      <tr>
-        <td>id: <%= thing.id%></td>
-        <td> <%= image_tag thing.thing_images.first %></td>
-        <td>Title: <%= thing.title %></td>
-        <td>Description: <%= thing.description %></td>
-        <td>Owner: <%= @users.find(thing.owner.id).username %></td>
-        
-        <td><% thing.tag_ids.each do |tag| %>
-              <%= @tags.find(tag).name + ", " %>
-            <% end %>
-        </td>
-        <% if current_user.id == thing.owner.id %>
-          <td>Loanee: thing.loanee_id </td>
-        <% end %>
-        
-        <td><%= link_to 'Show', thing_path(thing) %></td>
-
-        <% if current_user.id == thing.owner.id %>
-          <!-- You Own this item and can edit it -->
-          <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
-          <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Thing', new_thing_path %>

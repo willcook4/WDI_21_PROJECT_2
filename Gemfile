@@ -5,6 +5,8 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'rails-assets-tether', '>= 1.1.0'
 # CarrierWave, from github for multiple file uploads
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'rmagick', '2.15.4' 
+gem 'fog', require: 'fog/aws'
 # CarrierWave 
 # gem 'carrierwave', '~> 0.11.2'
 # Devise 

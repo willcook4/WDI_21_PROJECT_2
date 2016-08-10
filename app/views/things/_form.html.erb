@@ -23,7 +23,7 @@
         <%= f.label "Images, multiple allowed", :class => "col-sm-2 col-form-label" %>
         <div class="col-sm-10">
           <% thing.thing_images.each.with_index do |image, index| %>
-            <%= image_tag(image) %>
+            <%= image_tag(image.sized) %>
             <%= check_box_tag 'images_to_delete[]', index %> Delete?
           <% end %>
           <%= f.file_field :thing_images, {:class => "form-control", :multiple =>true }%>

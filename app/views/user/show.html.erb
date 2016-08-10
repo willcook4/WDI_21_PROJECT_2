@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card">
-    <%= image_tag @user.profile_image, class: "card-img-top" %>
+    <%= image_tag @user.profile_image.profilelarge, class: "card-img-top" %>
     <div class="card-block">
       <h4 class="card-title"><%= @user.username %></h4>
       <% if current_user.id == @user.id %>

@@ -5,6 +5,9 @@
   <li>
     <%= link_to thing_path(thing.id) do %>
     <div>
+      <% thing.thing_images.each do |image| %>
+        <%= image_tag image.sized %>
+      <% end %>
       <h5><%= thing.title %></h5>
       <h5><%= thing.description %></h5>
     </div>

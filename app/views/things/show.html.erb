@@ -1,6 +1,6 @@
 <p>
   <% @thing.thing_images.each do |image| %>
-    <%= image_tag(image) %>
+    <%= image_tag(image.sized) %>
   <% end %>
 </p>
 

@@ -30,8 +30,8 @@ a:hover {
 }
 
 img {
-  width: 300px;
-  height: 200px;
+  // width: 300px;
+  // height: 200px;
 }
 /// All Pages
 // Move content down away from the header
@@ -71,7 +71,10 @@ img {
 .navbar-brand {
   font-family: 'Hammersmith One', sans-serif;
   font-size: 30px;
-  
+}
+
+#headeryourprofilelink {
+  padding-top: 12px;
 }
 
 //// Login and Register a user Pages
