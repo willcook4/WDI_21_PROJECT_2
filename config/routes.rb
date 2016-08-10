@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'aught', to: "aught#index"
   get 'statics', to: "statics#index"
-  # get 'user/show', to: 'user#show'
-  get 'user:id/', to: 'user#show', as: "user"
   get 'user/index', to: 'user#index'
-
+  get 'user/:id', to: 'user#show', as: "user"
   get 'tag/index', to: 'tag#index'
   get 'tag/tag:id', to: 'tag#show', as: "tag"
 

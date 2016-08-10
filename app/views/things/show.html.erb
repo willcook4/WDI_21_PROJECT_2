@@ -26,9 +26,11 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to "Message Owner", conversation_messages_path(@thing.user_id, current_user.id) %>
-</p>
+<% if current_user.id != @thing.user_id %>
+  <p>
+    <%= link_to "Message Owner", conversations_path(sender_id: current_user.id, receiver_id: @thing.user_id), method: :post %>
+  </p>
+<% end %>
 
 <%= link_to '< Back', things_path %>
 

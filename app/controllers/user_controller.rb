@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   before_action :authenticate_user!, only: [:show]
-  before_action :user_authorization, only: [:show]
+  # before_action :user_authorization, only: [:show]
 
 
   def show
@@ -18,6 +18,6 @@ class UserController < ApplicationController
   private 
   # User can only see his/her profile
     def user_authorization
-      redirect_to(root_path) unless current_user.id.to_s == params[:id]
+      redirect_to(root_path) unless current_user.id.to_i == params[:id]
     end
 end
