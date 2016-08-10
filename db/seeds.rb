@@ -15,6 +15,8 @@ user1 = User.create(username: "will", first_name: "Will", last_name: "Cookie", c
 
 user2 = User.create(username: "mickyg", first_name: "Mike", last_name: "Hayden", contact_number: "0123434553", email: "mike@ga.co", profile_image: "", password: "password", password_confirmation: "password")
 
+
+# Tags
 tag1 = Tag.create(name: "Antiques & collectables")
 tag2 = Tag.create(name: "Art")
 tag3 = Tag.create(name: "Baby Gear")
@@ -36,4 +38,6 @@ tag18 = Tag.create(name: "Sports Equipment")
 tag19 = Tag.create(name: "Toys & Models")
 tag20 = Tag.create(name: "Travel, Events & Activities")
 tag21 = Tag.create(name: "Miscellaneous")
+
+# Things
                                                                                                         

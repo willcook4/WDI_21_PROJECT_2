@@ -33,6 +33,24 @@ img {
   width: 300px;
   height: 200px;
 }
+/// All Pages
+// Move content down away from the header
+.subform {
+  padding-top: 44px;
+  padding-bottom: 60px;
+}
+
+.pageheading {  
+  font-family: 'Hammersmith One', sans-serif;
+  margin-left: 12px;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: #4A8DC4;
+  border-color: #4A8DC4;
+}
+
 /// Header
 
 .bg-faded {
@@ -55,6 +73,33 @@ img {
   font-size: 30px;
   
 }
+
+//// Login and Register a user Pages
+#remembermecheckbox {
+  margin-top: 16px;
+}
+#remembermelabel {
+  width: 144px;
+}
+
+#loginbtn {
+  width: 135px;
+}
+
+#registerbtn {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #79B56E;
+  border-color: #79B56E;
+  margin-left: 16px;
+  width: 135px;
+}
+
+#registerbtn:hover {
+  color: rgba(25, 25, 25, 0.8);
+  background-color: #8CD280;
+  border-color: #8CD280;
+}
+
 
 //// Things Pages
 
