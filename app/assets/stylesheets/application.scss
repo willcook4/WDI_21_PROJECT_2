@@ -107,6 +107,59 @@ img {
   border-color: #8CD280;
 }
 
+// User edit page 
+
+.editpwdnote {
+  padding-top: 12px;
+  color: #9E9E9E;
+}
+
+.pwdboxalignment {
+  margin-left: 17%;
+}
+
+input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(100, 100, 100, 0.8);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: #8CD280;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 0px;
+    border-style: outset;
+    border-color: #8CD280;
+    border-radius: 3px;
+    height: 24px;
+}
+
+.redcancelbox {
+  background-color: rgba(255,0,0,0.1);
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 580px;
+}
+
+#backbtn {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #79B56E;
+  border-color: #79B56E;
+  // margin-left: 16px;
+  width: 135px;
+  margin-top: 50px;
+}
+
+#backbtn:hover {
+  color: rgba(25, 25, 25, 0.8);
+  background-color: #8CD280;
+  border-color: #8CD280;
+}
 
 //// Things Pages
 
@@ -122,3 +175,5 @@ img {
   margin: 0 auto;
   display: block;
 }
+
+

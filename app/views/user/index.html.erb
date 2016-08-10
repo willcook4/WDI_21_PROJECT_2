@@ -1,16 +1,17 @@
-<h2>Users also on Aught</h2>
-
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-  <% @users.each do |user| %>
-  <%= link_to user_path(user.id) do  %>
-    <div class="card">
-      <%= image_tag user.profile_image.profilelarge %>
-      <div class="card-block">
-        <h4 class="card-title"><%= user.username %></h4>
+<div class="subform">
+  <h2 class="pageheading">Users also on Aught...</h2>
+  <div class="card-deck-wrapper">
+    <div class="card-deck">
+    <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do  %>
+      <div class="card">
+        <%= image_tag user.profile_image.profilelarge %>
+        <div class="card-block">
+          <h4 class="card-title"><%= user.username %></h4>
+        </div>
       </div>
+    <% end %>
+    <% end %>
     </div>
-  <% end %>
-  <% end %>
   </div>
 </div>
