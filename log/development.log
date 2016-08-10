@@ -41926,3 +41926,104 @@ Processing by ThingsController#yourthings as HTML
 Completed 200 OK in 65ms (Views: 59.8ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/things/yours" for ::1 at 2016-08-10 17:30:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 654ms (Views: 597.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:31:00 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:35:43 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 114ms (Views: 108.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:51:03 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 127ms (Views: 124.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:53:00 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 128ms (Views: 123.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:54:54 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 116ms (Views: 112.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:55:09 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 130ms (Views: 126.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 17:57:16 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 126ms (Views: 121.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 18:00:19 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 117ms (Views: 113.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/things/yours" for ::1 at 2016-08-10 18:01:20 +0100
+Processing by ThingsController#yourthings as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering things/yourthings.html.erb within layouts/application
+  [1m[36mThing Load (0.3ms)[0m  [1m[34mSELECT "things".* FROM "things" WHERE "things"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered things/yourthings.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 124ms (Views: 120.7ms | ActiveRecord: 0.8ms)
+
+
