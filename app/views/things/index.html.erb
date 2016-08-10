@@ -10,7 +10,7 @@
           <div class="card-block">
             <h4 class="card-title"><%= thing.title %></h4>
             <p class="card-text"><%= thing.description %></p>
-            <p class="card-text"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
+            <p class="smallusername"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
           </div>
         </div>
         <% end %>

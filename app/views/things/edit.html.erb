@@ -1,4 +1,8 @@
-<%= render 'form', thing: @thing %>
+<div class="subform">
+  <h2 class="pageheading">Edit Share...</h2>
+  
+  <%= render 'form', thing: @thing %>
 
-<%= link_to 'Show', @thing %> |
-<%= link_to 'Back', things_path %>
+  <%= link_to 'Show', @thing %> |
+  <%= link_to 'Back', things_path %>
+</div>

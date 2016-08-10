@@ -29,11 +29,33 @@ $(document).on('turbolinks:load', function() {
               count += word.length;
               return count <= limit;
           }).join('');
-          sentance += '...';
-          return sentance;
+          return sentance + "...";
       }
-  $texttotruncate = $('p.card-text').text() 
-  $(alert(truncateOnWord($texttotruncate, 120)));
-  $('p.card-text').replaceWith( "<p>" + ($(truncateOnWord($texttotruncate, 120)).text()) + "</p>" );    
+
+  var $TextToChange = document.getElementsByClassName('card-text');
+  $($TextToChange).each(function(){
+    console.log(truncateOnWord($(this).text(), 120))
+    $newShortText = truncateOnWord($(this).text(), 120)
+  });
+
+
+
+
+
+
+  // $.each($TextToChange), function(index, value) {
+  //   console.log((value).text());
+  // }
+
+
+  // $texttotruncate = $('p.card-text').text() 
+  // $(alert(truncateOnWord($texttotruncate, 120)));
+  // Works but changes every cardtext box to be the same
+  // $('p.card-text').html(truncateOnWord($texttotruncate, 120));
+  // var $TextToChange = $('card-text').text();
+  // $('card-text').text($texttotruncate);
+
+
+  
 });
 
