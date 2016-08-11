@@ -9,7 +9,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 # CarrierWave, from github for multiple file uploads
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'rmagick', '2.15.4' 
-gem 'fog', require: 'fog/aws'
+gem 'carrierwave-aws'
 # CarrierWave 
 # gem 'carrierwave', '~> 0.11.2'
 # Devise 
