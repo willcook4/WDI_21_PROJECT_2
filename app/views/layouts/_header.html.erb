@@ -10,8 +10,13 @@
         <li class="nav-item"><%= link_to "Find Things", things_path, :class => "nav-link" %></li>
         <li class="nav-item"><%= link_to "New Share", new_thing_path, :class => "nav-link" %></li>
         <li class="nav-item"><%= link_to "Your Profile: #{image_tag(current_user.profile_image.profilesmallthumb)}".html_safe, edit_user_registration_path, { :class => "nav-link", :id => "headeryourprofilelink" } %></li>
-        <li class="nav-item"><%= link_to "Your Messages()", conversations_path, :class => "nav-link" %>
-        </li>
+
+        <%  if unread_messages.present? %>
+          <li class="nav-item"><%= link_to "Your Messages: (#{unread_messages})", conversations_path, :class => "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Your Messages", conversations_path, :class => "nav-link" %></li>
+        <% end %>
+
         <li class="nav-item"><%= link_to "Your Shares", things_yours_path, :class => "nav-link" %></li>
         <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, { method: :delete, :class => "nav-link"} %></li>
       <% else %>

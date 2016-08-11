@@ -7,9 +7,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
-
     @message = @conversation.messages.new
   end
 

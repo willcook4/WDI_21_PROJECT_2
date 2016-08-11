@@ -202,6 +202,15 @@ input[type="file" i]::-webkit-file-upload-button, button {
   margin: 30px;
 }
 
-.messageul {
-  list-style: none;
+.otherusermessagetitle, .otherusermessagebody {
+  color: #4A8DC4;
+}
+
+.currentusermessagetitle, .currentusermessagebody {
+  color: #79B56E;
+}
+
+.otheruser {
+  float: right;
+  min-width: 290px;
 }

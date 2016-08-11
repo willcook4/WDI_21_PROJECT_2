@@ -1,20 +1,32 @@
-<ul>
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <li>
-        <h4><%= message.user.username %></h4>
-        <p><%= message.body %></p>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="subform">
+  <h2 class="pageheading">Message...</h2>
+  <div class="container">
+    <div class="row">
+      <% count = 1 %>
+      <% @messages.each do |message| %>
+        <% if message.body %>
+          <div class="col-sm-7">
+              <% if current_user == message.user %>
+                <div class="card card-block currentuser">
+                    <h5 class="card-title currentusermessagetitle"><%= message.user.username %></h5>
+                    <p class="card-text currentusermessagebody"><%= message.body %></p>
+                </div>
+              
+              <% else %>
+              
+                <div class="card card-block otheruser">
+                   <h5 class="card-title otherusermessagetitle"><%= message.user.username %></h5>
+                    <p class="card-text otherusermessagebody"><%= message.body %></p>
+                </div>
+              
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <% count +=1 %>
+      <% end %>
 
-<%= render "message" %>
-
-<%#= form_for [@conversation, @message] do |f| %>
-<!--   <div class="field">
-    <%#= f.text_area :body, placeholder: "Your message" %>
-  </div> -->
-
-  <%#= f.submit "Send" %>
-<%# end %>
+  <%= render "message" %>
+  
+  </div>
+</div>

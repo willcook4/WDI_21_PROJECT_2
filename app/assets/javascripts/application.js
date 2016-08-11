@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
       return ($str+"...");
     }
   }
-
+// Truncating the description text
   var $TextToChange = document.getElementsByClassName('card-text');
   $($TextToChange).each(function() {
     // console.log(willtruncation($(this)));
@@ -69,14 +69,6 @@ $(document).on('turbolinks:load', function() {
     // var $newItem = $('<p class="ellipistext">'+ $newShortText +'</p>');
     // $('.short-card-text').append($newItem); 
     
-  
-
-  
-
-
-
-
-
 
   // $.each($TextToChange), function(index, value) {
   //   console.log((value).text());
@@ -91,7 +83,19 @@ $(document).on('turbolinks:load', function() {
   // var $TextToChange = $('card-text').text();
   // $('card-text').text($texttotruncate);
 
+  $('*[id^=messagetitle]:visible').each(function() {
+    console.log($(this).text());
+    console.log(($(this).attr('id')).slice(12));
 
+      if ((($(this).attr('id')).slice(12)) % 2 == 0) {
+         console.log($(this)+"red");
+         $(this).css({ 'color': 'red'});
+      }
+      else {
+        console.log(($(this).to_s + "blue"));
+        $(this).css({ 'color': 'blue'});
+      }
+  });
   
 });
 
