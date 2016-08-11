@@ -1,8 +1,10 @@
 <div class="subform">
   <h2 class="pageheading">Things you can borrow...</h2>
   <div class="container">
-    <div class="card-deck-wrapper">
-      <div class="card-deck">
+    <!-- <div class="card-deck-wrapper">
+      <div class="card-deck"> -->
+      <div class="card-group">
+        <div>
         <% @things.each do |thing| %>
         <%= link_to thing_path(thing.id) do  %>
         <div class="card">
@@ -10,6 +12,7 @@
           <div class="card-block">
             <h4 class="card-title"><%= thing.title %></h4>
             <p class="card-text"><%= thing.description %></p>
+            <div class="short-card-text"></div>
             <p class="smallusername"><small class="text-muted"><%= @users.find(thing.owner.id).username %></small></p>
           </div>
         </div>
