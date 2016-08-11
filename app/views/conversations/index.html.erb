@@ -1,25 +1,42 @@
-<h1>Inbox</h1>
-<h5>Message from:</h5>
-<ul>
-  <% @conversations.each do |conversation| %>
-    <li><%= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation) %>
-    </li>
-  <% end %>
-</ul>
-
-<ul>
-  <% @conversations.each do |conversation| %>
-    <li><%= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-        (<%= conversation.unread_message_count(current_user) %>)
+<div class="subform">
+  <div id="pageheading">
+    <%= image_tag current_user.profile_image.profilethumb, class: "idpicture" %>
+    <h2 class="pageheadingtext">Your Conversations...</h2>
+  </div>
+  <div class="container">
+    <h3>Inbox</h3>
+    <h6>Message with:</h6>
+    <ul class="messageul">
+      <% @conversations.each do |conversation| %>
+        <%= link_to conversation_messages_path(conversation) do %>
+          <li>
+            <%= image_tag conversation.recipient(current_user).profile_image.profilesmallthumb %>
+            <%= conversation.recipient(current_user).username %>
+            <% if !conversation.unread_message_count(current_user).zero? %>
+              (<%= conversation.unread_message_count(current_user) %>)
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
 
-<h2>Users</h2>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %></li>
-  <% end %>
-</ul>
+    <div>
+      <h3>Users</h3>
+      <h6>Click a user to send a message</h6>
+      <div class="card-deck-wrapper">
+        <div class="card-deck">
+          <% @users.each do |user| %>
+            <%= link_to conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post  do %>
+              <div class="card">
+                <%= image_tag user.profile_image.profilethumb, class: 'card-img-top' %>
+                <div class="card-block">
+                  <h4 class="card-title"><%= user.username %></h4>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+  </div>
+</div>

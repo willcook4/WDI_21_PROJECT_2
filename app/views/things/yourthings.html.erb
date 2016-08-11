@@ -1,19 +1,22 @@
-<h1>Things You're Sharing...</h1>
-
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-    <% @things.each do |thing| %>
-    <%= link_to thing_path(thing.id) do  %>
-    <div class="card">
-      <%= image_tag thing.thing_images.first.sized, {:class => "card-img-top"} %>
-      <div class="card-block">
-        <h4 class="card-title"><%= thing.title %></h4>
-        <p class="card-text"><%= thing.description %></p>
+<div class="subform">
+  <h2 class="pageheading">Things You're Sharing...</h2>
+  <div class="container">
+    <div class="card-deck-wrapper">
+      <div class="card-deck">
+        <% @things.each do |thing| %>
+        <%= link_to thing_path(thing.id) do  %>
+        <div class="card">
+          <%= image_tag thing.thing_images.first.sized, {:class => "card-img-top"} %>
+          <div class="card-block">
+            <h4 class="card-title"><%= thing.title %></h4>
+            <p class="card-text"><%= thing.description %></p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
       </div>
     </div>
-    <% end %>
-    <% end %>
+
+    <%= link_to 'New Thing', new_thing_path, { :class => "btn btn-primary", :id => "registerbtn" } %>
   </div>
 </div>
-
-<%= link_to 'New Thing', new_thing_path %>

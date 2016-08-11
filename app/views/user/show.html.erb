@@ -1,16 +1,18 @@
 <div class="container">
-  <div class="card">
-    <%= image_tag @user.profile_image.profilelarge, class: "card-img-top" %>
-    <div class="card-block">
-      <h4 class="card-title"><%= @user.username %></h4>
-      <% if current_user.id == @user.id %>
-        <p class="card-text">Only once you confirm a swap can anyone else see the following:</h3>
-      <p>* First name: <%= @user.first_name %><p>
-      <p>* Last name: <%= @user.last_name %><p>
-      <p>* email: <%= @user.email %><p>
-      <p>* Contact Number: <%= @user.contact_number %></p>
-      <p><%= link_to 'Edit the profile', edit_user_registration_path(current_user), class: "btn btn-primary" %></p>
-      <% end %>
+  <div class="showidpagepadding">
+    <div class="card">
+      <%= image_tag @user.profile_image.profilelarge, class: "card-img-top" %>
+      <div class="card-block">
+        <h4 class="card-title"><%= @user.username %></h4>
+        <% if current_user.id == @user.id %>
+          <p class="card-text">Only once you confirm a swap can anyone else see the following:</h3>
+        <p>* First name: <%= @user.first_name %><p>
+        <p>* Last name: <%= @user.last_name %><p>
+        <p>* email: <%= @user.email %><p>
+        <p>* Contact Number: <%= @user.contact_number %></p>
+        <p><%= link_to 'Edit your profile', edit_user_registration_path(current_user), { :class => "btn btn-primary", :id => "registerbtn" } %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -81,6 +81,10 @@ img {
   padding-top: 12px;
 }
 
+button .navbar-toggler .hidden-sm-up {
+  padding-top: 8px;
+}
+
 //// Login and Register a user Pages
 #remembermecheckbox {
   margin-top: 16px;
@@ -161,6 +165,12 @@ input[type="file" i]::-webkit-file-upload-button, button {
   border-color: #8CD280;
 }
 
+// User show page
+
+.showidpagepadding {
+  margin-top: 60px;
+}
+
 //// Things Pages
 
 .aught-form-container {
@@ -176,4 +186,22 @@ input[type="file" i]::-webkit-file-upload-button, button {
   display: block;
 }
 
+/// Messaging
+//Converstaions page
+.idpicture {
+  border-radius: 15px;
+  display: inline;
+}
 
+.pageheadingtext {
+  display: inline;
+  margin-left: 25px;
+}
+
+#pageheading {
+  margin: 30px;
+}
+
+.messageul {
+  list-style: none;
+}
