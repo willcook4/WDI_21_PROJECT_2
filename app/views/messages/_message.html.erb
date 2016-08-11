@@ -1,7 +1,10 @@
 <%= form_for [@conversation, @message] do |f| %>
   <div class="field">
-    <%= f.text_area :body, placeholder: "Your message" %>
+  <label for="exampleTextarea">Your message...</label><br>
+    <div class="col-sm-5">
+      <%= f.text_area(:body, placeholder: "Type your message here...", class: "form-control", :rows => "6") %>
+    </div>
+    <%= f.submit "Send", :class => "btn btn-primary", :id => "messagesendbutton" %>
   </div>
-
-  <%= f.submit "Send" %>
 <% end %>
+

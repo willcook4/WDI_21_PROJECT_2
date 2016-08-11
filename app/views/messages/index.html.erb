@@ -1,11 +1,11 @@
 <div class="subform">
   <h2 class="pageheading">Message...</h2>
-  <div class="container">
+  <div class="m-x-auto container-fluid">
     <div class="row">
       <% count = 1 %>
       <% @messages.each do |message| %>
         <% if message.body %>
-          <div class="col-sm-7">
+          <div class="col-sm-9 messagebox">
               <% if current_user == message.user %>
                 <div class="card card-block currentuser">
                     <h5 class="card-title currentusermessagetitle"><%= message.user.username %></h5>
@@ -27,6 +27,6 @@
       <% end %>
 
   <%= render "message" %>
-  
+
   </div>
 </div>

@@ -3,6 +3,7 @@
   
   <%= render 'form', thing: @thing %>
 
-  <%= link_to 'Show', @thing %> |
-  <%= link_to 'Back', things_path %>
+  <%= link_to '< Back', @thing, :class => "btn btn-primary" %>
+  <%= link_to 'Find Things', things_path, :class => "btn btn-primary" %>
+  
 </div>

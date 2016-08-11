@@ -1,40 +1,43 @@
-<p>
-  <% @thing.thing_images.each do |image| %>
-    <%= image_tag(image.sized) %>
-  <% end %>
-</p>
+<div class="subform">
+  <h2 class="pageheading"><%= @thing.title %></h2>
+  <div class="container">
+    <p>
+      <% @thing.thing_images.each do |image| %>
+        <%= image_tag(image.sized) %>
+      <% end %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @thing.title %>
-</p>
+    <p>
+      <strong><%= @thing.title %></strong>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @thing.description %>
-</p>
+    <p>
+      <strong>Description:</strong><br>
+      <%= @thing.description %>
+    </p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @thing.owner.username %>
-</p>
+    <p>
+      <strong>Owner:</strong><br>
+      <%= @thing.owner.username %>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <% @thing.tag_ids.each do |tag| %>
-    <%= @tags.find(tag).name + ", " %>
-  <% end %>
-</p>
+    <p>
+      <strong>Category:</strong><br>
+      <% @thing.tag_ids.each do |tag| %>
+        <%= @tags.find(tag).name + ", " %>
+      <% end %>
+    </p>
 
-<% if current_user.id != @thing.user_id %>
-  <p>
-    <%= link_to "Message Owner", conversations_path(sender_id: current_user.id, receiver_id: @thing.user_id), method: :post %>
-  </p>
-<% end %>
+    <% if current_user.id != @thing.user_id %>
+      <p>
+        <%= link_to "Message Owner", conversations_path(sender_id: current_user.id, receiver_id: @thing.user_id), method: :post %>
+      </p>
+    <% end %>
 
-<%= link_to '< Back', things_path %>
+    <%= link_to '< Back', things_path, { :class => "btn btn-primary", :id => "registerbtn" } %>
 
-<% if current_user.id == @thing.user_id %>
-  <%= link_to 'Edit', edit_thing_path(@thing) %>
-<% end %>
-
+    <% if current_user.id == @thing.user_id %>
+      <%= link_to 'Edit', edit_thing_path(@thing), :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

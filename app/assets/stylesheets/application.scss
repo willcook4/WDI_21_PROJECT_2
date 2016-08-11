@@ -29,10 +29,12 @@ a:hover {
   text-decoration: none;
 }
 
-img {
-  // width: 300px;
-  // height: 200px;
+// form select background colour
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #4a8dc4;
+  color: white;
 }
+
 /// All Pages
 // Move content down away from the header
 .subform {
@@ -49,10 +51,20 @@ img {
 .btn-primary {
   background-color: #4A8DC4;
   border-color: #4A8DC4;
+  color: white;
+}
+
+a:visited.btn-primary  {
+  color: white;
 }
 
 .card {
   max-width: 300px;
+}
+
+.card-block {
+  padding: 1.30rem;
+  min-width: 140px;
 }
 
 /// Header
@@ -177,6 +189,51 @@ input[type="file" i]::-webkit-file-upload-button, button {
   margin: 50px;
 }
 
+#exampleInputFile {
+  margin-top: 20px;
+}
+
+.showimgbox {
+  margin-bottom: 20px;
+}
+
+.showcheckbox {
+  margin-bottom: 20px;
+}
+
+.categoryselect {
+  margin-bottom: 50px;
+  display: inline;
+}
+
+.category-btn {
+  height: 35px; 
+  color: white;
+  background-color: #79B56E;
+}
+
+.search-btn {
+  height: 36px;
+  color: white;
+  background-color: #79B56E;
+  border-color: #79B56E;
+}
+
+
+.dropdown-item:hover {
+  background-color: #54ADDD;
+}
+
+.searchbox {
+  display: inline;
+  max-width: 40%;
+  min-width: 35%;
+}
+
+.searchbar {
+  margin-bottom: 30px; 
+}
+
 //// Show Page
 
 // Card image width
@@ -209,8 +266,30 @@ input[type="file" i]::-webkit-file-upload-button, button {
 .currentusermessagetitle, .currentusermessagebody {
   color: #79B56E;
 }
+.currentuser {
+  border-radius: 44px;
+  background-color: rgba(140, 210, 128,0.1); 
+  border: 1px solid #79B56E;
+  min-width: 290px
+}
 
 .otheruser {
-  float: right;
+  border-radius: 44px;
+  border: 1px solid #4A8DC4;
+  background-color: rgba(84,173,221,0.1); 
   min-width: 290px;
+  margin-left: 50px;
+}
+
+.messgestylebox {
+  max-width: 250px;
+}
+
+.messagebox {
+  text-align: center;
+}
+
+#messagesendbutton {
+  margin-top: 30px;
+  display: block;
 }
