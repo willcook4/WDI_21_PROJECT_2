@@ -1,0 +1,22 @@
+
+<div class="row searchbar">
+  <div class="col-md-6">
+    <div class="btn-group">
+      <button type="button" class="btn category-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Category Select
+      </button>
+      <div class="dropdown-menu">
+        <% @tags.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag[:id]), class: "dropdown-item" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <form class="form-inline">  
+      <input type="text" class="form-control" placeholder="Search for...">
+      <button class="btn btn-secondary search-btn" type="submit">Go!</button>
+    </form>
+  </div>
+</div>

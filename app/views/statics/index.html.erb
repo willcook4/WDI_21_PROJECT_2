@@ -1,25 +1,38 @@
-<h1>Statics#index</h1>
-<h4>This will be the Landing Page, available to anyone</h4>
-<p>Find me in app/views/statics/index.html.erb</p>
+<div class="image">
+  <div class= "headingtext">
+    <h1 class="titletext">Aught</h1>
+    <h5 class="byline">Borrow something, anything and everything from your local community</h5>
+    
+    <h5 id="howitworks">How does it work?</h5>
+    <p id="howitworksdescirp">You register, Free!
+    Have a look at what is beign shared around in your area. Find somehing your want? Easily contact the owner and arrange the lending with Aught. Return the karma by offering to share something you have around.
+    </p>
 
+    <h5 id="whatsonaught">What's on aught?</h5>
+    <p id="whatsonaughtdescript">From trollys, tools, sports gear, bbq's and lawnmowers you can find it all on aught. If it is something someone might have where you live then it is probably on aught.</p>
 
-<h3>Who's on aught?</h3>
-<h3><%= link_to 'View the community', user_index_path %></h3>
+    <h5 id="whoson">Who's using Aught?</h5>
+    <p id="whosondescript">Lot's of people in your area are using aught right now. The more people who sign up the better the service so tell all your friends too!!</p>
 
-<h3>FAQ</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in.</p>
+    <div class="registerbox">
+      <h1 id="registertitle">Register now!</h1>
+      <h3 id="registerdescrip">It's free and simple to do</h3>
+      <p><%= link_to 'Register Now!', new_user_registration_path(current_user), { :class => "btn btn-primary", :id => "registerbtnlarge" } %></p>
+    </div>
+    <div class="right">
+      <%= image_tag "guitar.jpg", class: "landingimg" %>
+    </div>
 
+    <div class="right">
+      <%= image_tag "camera.jpg", class: "landingimg" %>
+    </div>
 
-<h3>What's on aught?</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in.</p>
+    <div class="right">
+      <%= image_tag "spanner.jpg", class: "landingimg" %>
+    </div>
 
-<h3>Is aught for me?</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+    <div class="left">
+      <%= image_tag "plant.jpg", class: "landingimg" %>
+    </div>
+  </div>
+</div>

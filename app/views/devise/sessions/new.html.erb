@@ -2,40 +2,42 @@
   <h2 class="pageheading">Log in</h2>
   <div class="container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-group row">
-      <div class="field">
-        <%= f.label :email, :class => "col-sm-2 col-form-label" %>
-        <div class="col-sm-5">
-          <%= f.email_field :email, { :class => "form-control",autofocus: true } %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <div class="field">
-        <%= f.label :password, :class => "col-sm-2 col-form-label" %>
-        <div class="col-sm-5">
-          <%= f.password_field :password, autocomplete: "off", :class => "form-control", autofocus: true %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <% if devise_mapping.rememberable? -%>
+    <div class=row>
+      <div class="form-group">
         <div class="field">
-          <%= f.label :remember_me, { :class => "col-sm-4 col-form-label", :id => "remembermelabel" } %>
-          <div class="col-sm-4">
-            <%= f.check_box :remember_me, { :id => "remembermecheckbox" } %>
+          <%= f.label :email, :class => "col-sm-2 col-form-label" %><br>
+          <div class="col-sm-5">
+            <%= f.email_field :email, { :class => "form-control",autofocus: true } %>
+          </div><br>
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <div class="field">
+          <%= f.label :password, :class => "col-sm-2 col-form-label" %><br>
+          <div class="col-sm-5">
+            <%= f.password_field :password, autocomplete: "off", :class => "form-control", autofocus: true %>
           </div>
         </div>
-      <% end -%>
-    </div>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Log in", { :class => "btn btn-primary", :id => "loginbtn" } %>
-    </div>
-    
+      <div class="form-group">
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.label :remember_me, { :class => "col-sm-4 col-form-label", :id => "remembermelabel" } %>
+            <div class="col-sm-4">
+              <%= f.check_box :remember_me, { :id => "remembermecheckbox" } %>
+            </div>
+          </div>
+        <% end -%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Log in", { :class => "btn btn-primary", :id => "loginbtn" } %>
+      </div>
+      
     <% end %>
+    </div>
   </div>
   <%= render "devise/shared/links" %>
 </div>

@@ -1,3 +1,4 @@
+<div class="container">
 <div class="subform">
   <h2 class="pageheading">Edit User...</h2>
   <div class="container">
@@ -106,6 +107,7 @@
       <p>Unhappy? Want to Cancel your account? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %></p>
     </div>
 
-    <%= link_to "Back", :back, { :class => "btn btn-primary", :id => "backbtn" } %>
+    <%= link_to "Back", root_path, { :class => "btn btn-primary", :id => "backbtn" } %>
   </div>
+</div>
 </div>

@@ -1,9 +1,22 @@
-<%= render 'search', :things %>
+<div class="container">
+<div class="subform">
+  <h2 class="pageheading">Things you can borrow...</h2>
+  <div class="container">
+    <h5>Search...</h5>  
 
-<h1>Tags:</h1>
-<h4>Click on a tag to view items with that tag:</h4>
-<ul>
-  <% @tags.each do |tag| %>
-    <li><%= link_to tag.name, tag_path(tag[:id]) %></li>
-  <% end %>
-</ul>
+    <%= render "things/search" %>
+    
+    <div class="card-deck-wrapper">
+      <div class="card-deck">
+        <div>
+          <h1>Tags:</h1>
+          <h4>Click on a tag to view items with that tag:</h4>
+          <ul>
+            <% @tags.each do |tag| %>
+              <li><%= link_to tag.name, tag_path(tag[:id]) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>

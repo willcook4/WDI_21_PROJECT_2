@@ -35,6 +35,157 @@ a:hover {
   color: white;
 }
 
+// Landing page
+.image {
+  position: relative;
+  width: 100%;
+}
+
+.left {
+  float: left;
+}
+
+.landingimg {
+  max-width: 100%;
+}
+
+.headingtext {
+  margin-top: 100px;
+  position: absolute;
+}
+
+.titletext {
+ position: absolute;
+ font-family: 'Hammersmith One', sans-serif;
+ margin-left: 25%;
+ margin-top: 0%;
+ margin-bottom: 25px;
+ font-size: 100px;
+ color: #4A8DC4;
+}
+
+
+
+.byline {
+  position: absolute;
+  margin: 140px 30px 30px 30%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  max-width: 390px;
+  color: #4A8DC4;
+  font-weight: 700;
+}
+
+#howitworks {
+  position: absolute;
+  margin-left: 33%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  max-width: 435px;
+  color: #4A8DC4;
+  font-weight: 700;
+  margin-top: 70%;
+  font-size: 30px;
+}
+
+#howitworksdescirp {
+  position: absolute;
+  margin-left: 36%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #4A8DC4;
+  font-weight: 700;
+  margin-top: 75%;
+  font-size: 20px;
+  line-height: 1.6em;
+  max-width: 650px;
+}
+
+#whatsonaught {
+  position: absolute;
+  margin-left: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #79B56E;
+  font-weight: 700;
+  margin-top: 111%;
+  font-size: 30px;
+}
+
+#whatsonaughtdescript {
+  position: absolute;
+  margin-left: 41%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #79B56E;
+  font-weight: 700;
+  margin-top: 116%;
+  font-size: 20px;
+  line-height: 1.6em;
+  max-width: 548px;
+}
+
+#whoson {
+  position: absolute;
+  margin-left: 10%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #79B56E;
+  font-weight: 700;
+  margin-top: 139%;
+  font-size: 30px;
+}
+
+#whosondescript {
+  position: absolute;
+  margin-left: 13%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #79B56E;
+  font-weight: 700;
+  margin-top: 144%;
+  font-size: 20px;
+  line-height: 1.6em;
+  max-width: 548px;
+}
+
+.registerbox {
+ position: absolute;
+ border: 3px solid #4A8DC4;
+ border-radius: 22px;
+ width: 30%;
+ height: 200px;
+ margin-top: 209%;
+ margin-left: 42%;
+ background-color: rgba(74,141,196,1);
+}
+
+#registerbtnlarge {
+  position: relative;
+  color: white;
+  background-color: #79B56E;
+  border-color: #79B56E;
+  margin-left: 40px;
+  width: 200px;
+  height: 53px;
+  font-size: 24px;
+}
+
+
+#registertitle {
+  color: white;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+#registerdescrip {
+ color: white;
+ margin-left: 8%;
+ margin-top: 5%;
+ font-weight: normal;
+}
+
+
 /// All Pages
 // Move content down away from the header
 .subform {
@@ -65,12 +216,16 @@ a:visited.btn-primary  {
 .card-block {
   padding: 1.30rem;
   min-width: 140px;
+  min-height: 233px;
 }
 
 /// Header
 
 .bg-faded {
   background-color: #79B56E;
+  border-bottom: #4A8DC4;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -270,7 +425,8 @@ input[type="file" i]::-webkit-file-upload-button, button {
   border-radius: 44px;
   background-color: rgba(140, 210, 128,0.1); 
   border: 1px solid #79B56E;
-  min-width: 290px
+  min-width: 290px;
+  min-height: 150px;
 }
 
 .otheruser {
