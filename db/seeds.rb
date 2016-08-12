@@ -88,4 +88,31 @@ tag20 = Tag.create(name: "Travel, Events & Activities")
 tag21 = Tag.create(name: "Miscellaneous")
 
 # Things
+
+thing1 = Thing.create(title: "Ladder", description: "Aluminimum Ladder, got paint splashes on it but otherwise works like new. It's probably too big to fit in most cars so you will need to walk it places. It is handy for getting the leaves out of the gutter in Autumn, other than that it sits in my house gathering dust, if you can put it to use then get in touch :)", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/ladder.jpg")])
+
+thing2 = Thing.create(title: "Lawnmower", description: "Petrol Lawnmower. Free to use just return it with the petrol can full. Let me know if there is anything wrong with it. Happy to sort something out for a long term rental.", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/lawnmower.jpg")])
+
+thing3 = Thing.create(title: "Baseball bat", description: "Wooden baseball bat, I also have a ball if you would like that too.", user_id: 2, thing_images: [File.open(Rails.root.to_s + "/db/images/baseballbat.jpg")])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                                                                         
