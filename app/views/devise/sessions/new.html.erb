@@ -21,19 +21,9 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <% if devise_mapping.rememberable? -%>
-          <div class="field">
-            <%= f.label :remember_me, { :class => "col-sm-4 col-form-label", :id => "remembermelabel" } %>
-            <div class="col-sm-4">
-              <%= f.check_box :remember_me, { :id => "remembermecheckbox" } %>
-            </div>
-          </div>
-        <% end -%>
-      </div>
 
       <div class="actions">
-        <%= f.submit "Log in", { :class => "btn btn-primary", :id => "loginbtn" } %>
+        <%= f.submit "Log in", { :class => "btn btn-primary", :id => "signinloginbtn" } %>
       </div>
       
     <% end %>

@@ -200,6 +200,11 @@ a:hover {
 }
 
 
+
+
+
+
+
 /// All Pages
 // Move content down away from the header
 .subform {
@@ -462,4 +467,23 @@ input[type="file" i]::-webkit-file-upload-button, button {
 #messagesendbutton {
   margin-top: 30px;
   display: block;
+}
+
+// Sign in page
+
+#signinloginbtn {
+  position: relative;
+  width: 135px;
+  width: 135px;
+  margin-left: 0px;
+  margin-top: 10%;
+}
+.registersigninbutton {
+  position: relative;
+  color: red;
+  background-color: #79B56E;
+  border-color: #79B56E;
+  margin-left: 180px;
+  margin-top: -6%;
+  width: 135px; 
 }
