@@ -29,7 +29,7 @@ Balsamiq was used to plan the layout of every page.
 
 ___
 
-#####Technology used?
+#####Technology used
 * Ruby
 * Ruby on Rails
 * JQuery / Javascript
@@ -38,6 +38,8 @@ ___
 * HTML5
 * Carrierwave gem (Image uploading)
 * Devise gem (Authentication handling)
+* Bootstrap v4
+* Select2
 * AWS S3 Storage
 * Heroku Deployment
 * Postgresql Database
