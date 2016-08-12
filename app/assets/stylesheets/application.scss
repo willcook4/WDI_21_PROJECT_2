@@ -78,24 +78,24 @@ a:hover {
 
 #howitworks {
   position: absolute;
-  margin-left: 33%;
+  margin-left: 30%;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 37px;
   max-width: 435px;
   color: #4A8DC4;
   font-weight: 700;
-  margin-top: 70%;
+  margin-top: 67%;
   font-size: 30px;
 }
 
 #howitworksdescirp {
   position: absolute;
-  margin-left: 36%;
+  margin-left: 34%;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 37px;
   color: #4A8DC4;
   font-weight: 700;
-  margin-top: 75%;
+  margin-top: 72%;
   font-size: 20px;
   line-height: 1.6em;
   max-width: 650px;
@@ -108,31 +108,31 @@ a:hover {
   border-radius: 37px;
   color: #79B56E;
   font-weight: 700;
-  margin-top: 111%;
+  margin-top: 106%;
   font-size: 30px;
 }
 
 #whatsonaughtdescript {
   position: absolute;
-  margin-left: 41%;
+  margin-left: 59%;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 37px;
   color: #79B56E;
   font-weight: 700;
-  margin-top: 116%;
+  margin-top: 110%;
   font-size: 20px;
   line-height: 1.6em;
-  max-width: 548px;
+  max-width: 500px;
 }
 
 #whoson {
   position: absolute;
   margin-left: 10%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 37px;
   color: #79B56E;
   font-weight: 700;
-  margin-top: 139%;
+  margin-top: 126%;
   font-size: 30px;
 }
 
@@ -143,11 +143,25 @@ a:hover {
   border-radius: 37px;
   color: #79B56E;
   font-weight: 700;
-  margin-top: 144%;
+  margin-top: 130%;
   font-size: 20px;
   line-height: 1.6em;
   max-width: 548px;
 }
+
+#viewthecommunity {
+  position: absolute;
+  margin-left: 13%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 37px;
+  color: #4A8DC4;
+  font-weight: 700;
+  margin-top: 137%;
+  font-size: 20px;
+  line-height: 1.6em;
+  max-width: 548px;
+}
+
 
 .registerbox {
  position: absolute;
@@ -165,7 +179,7 @@ a:hover {
   color: white;
   background-color: #79B56E;
   border-color: #79B56E;
-  margin-left: 40px;
+  margin-left: 80px;
   width: 200px;
   height: 53px;
   font-size: 24px;
@@ -174,13 +188,13 @@ a:hover {
 
 #registertitle {
   color: white;
-  margin-left: 15%;
+  margin-left: 20%;
   margin-top: 5%;
 }
 
 #registerdescrip {
  color: white;
- margin-left: 8%;
+ margin-left: 14%;
  margin-top: 5%;
  font-weight: normal;
 }
