@@ -89,11 +89,27 @@ tag21 = Tag.create(name: "Miscellaneous")
 
 # Things
 
-thing1 = Thing.create(title: "Ladder", description: "Aluminimum Ladder, got paint splashes on it but otherwise works like new. It's probably too big to fit in most cars so you will need to walk it places. It is handy for getting the leaves out of the gutter in Autumn, other than that it sits in my house gathering dust, if you can put it to use then get in touch :)", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/ladder.jpg")])
+thing1 = Thing.create(title: "Ladder", description: "Aluminimum Ladder, got paint splashes on it but otherwise works like new. It's probably too big to fit in most cars so you will need to walk it places. It is handy for getting the leaves out of the gutter in Autumn, other than that it sits in my house gathering dust, if you can put it to use then get in touch :)", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/ladder.jpg")], tag_ids: [tag12.id, tag6.id])
 
-thing2 = Thing.create(title: "Lawnmower", description: "Petrol Lawnmower. Free to use just return it with the petrol can full. Let me know if there is anything wrong with it. Happy to sort something out for a long term rental.", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/lawnmower.jpg")])
+thing2 = Thing.create(title: "Lawnmower", description: "Petrol Lawnmower. Free to use just return it with the petrol can full. Let me know if there is anything wrong with it. Happy to sort something out for a long term rental.", user_id: 1, thing_images: [File.open(Rails.root.to_s + "/db/images/lawnmower.jpg")], tag_ids: [tag12.id, tag6.id])
 
-thing3 = Thing.create(title: "Baseball bat", description: "Wooden baseball bat, I also have a ball if you would like that too.", user_id: 2, thing_images: [File.open(Rails.root.to_s + "/db/images/baseballbat.jpg")])
+thing3 = Thing.create(title: "Baseball bat", description: "Wooden baseball bat, I also have a ball if you would like that too.", user_id: 2, thing_images: [File.open(Rails.root.to_s + "/db/images/baseballbat.jpg")], tag_ids: [tag18.id])
+
+thing4 = Thing.create(title: "Trolley", description: "Handy trolley for moving house or business. Wheels work well on flat paths. Save your back. Happy to loan it to you for a bag of haribo", user_id: 4, thing_images: [File.open(Rails.root.to_s + "/db/images/trolly.png")], tag_ids: [tag21.id, tag12.id, tag7.id])
+
+thing5 = Thing.create(title: "Outdoor chairs", description: "Folding chairs. I've spent hours sitting in these. I have 4x of these chairs. I also have a cooler if you really want the whole beach kit!", user_id: 6, thing_images: [File.open(Rails.root.to_s + "/db/images/deck-chair.jpg")], tag_ids: [tag12.id])
+
+thing6 = Thing.create(title: "Guitar", description: "My Ex played guitar. I kept it to piss him off. Feel free to borrow it when your friend comes to town so you can jam. It comes with a case so you can travel around with it. My only rule is that if you take it you tune it. I don't know a thing about how to do that", user_id: 23, thing_images: [File.open(Rails.root.to_s + "/db/images/guitar.jpg")], tag_ids: [tag14.id])
+
+thing7 = Thing.create(title: "Lord of the rings books", description: "The return of the king, The two towers, and The fellowship of the ring. Borrow one, borrow some or borrow them all. All I ask is a recommendation for a new book. A hard copy is so much better", user_id: 12, thing_images: [File.open(Rails.root.to_s + "/db/images/lotrbooks.jpg")], tag_ids: [tag1.id, tag2.id, tag4.id])
+
+thing8 = Thing.create(title: "Hammer Drill", description: "Large 240v Bosch HammerDrill. Powerful enough for a good days work. Comes with the case and a handful of various bits. The bits are a range of sizes and conditions. If you have a special job you might want to get your own SDS+ bits. Please note that this is a 240v drill. The plug is a standard uk plug. This is NOT 110v! I drink beer, how much depends on you. I also have an 
+  rcd if your going to be working near water", user_id: 12, thing_images: [File.open(Rails.root.to_s + "/db/images/largedrill.jpg")], tag_ids: [tag6.id])
+
+thing9 = Thing.create(title: "Electric Breaker", description: "This just sits in my garage gathering dust. I never get to use it as much as I woud like to. Happy to share the joy of this bad boy. I can drop it off too if you want (although I may want to use it!). Comes with an extension lead if you want. Note this is a 240v one", user_id: 18, thing_images: [File.open(Rails.root.to_s + "/db/images/breaker.jpg")], tag_ids: [tag6.id ,tag7.id])
+
+
+
 
 
 

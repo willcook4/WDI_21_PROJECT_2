@@ -2,11 +2,11 @@
 ### Borrow something, anything and everything from your local communityHow
 
 #####What is Aught?
-Aught is a concept for a 'thing' sharing website. Users can login and view items that people in their community are sharing and they can share items themselves. 
+Aught is a concept for a 'thing' sharing website. Users can login and view items that people in their community are sharing and they can share items themselves.
 
+Many high price items spend much of their time gathering dust. When we all share we all buy less stuff. Then when we do buy something then we can spend more on items that are better. In short when we share the world becomes a better place.
 
 **See the live version here <http://aughtapp.herokuapp.com>**
-
 
 
 #####Planning
@@ -21,12 +21,18 @@ Draw.io was used to plan the ER Diagrams.
 
 ![alt text](http://aughtapp.s3.amazonaws.com/uploads/ERD.png "Aught ER Diagram ")
 
+**Wireframes**
+
+Balsamiq was used to plan the layout of every page.
+
+![alt text](http://aughtapp.s3.amazonaws.com/uploads/wireframes.png "Aught ER Diagram ")
+
 ___
 
 #####Technology used?
 * Ruby
 * Ruby on Rails
-* JQuery
+* JQuery / Javascript
 * ERB templates
 * CSS3
 * HTML5
@@ -39,6 +45,7 @@ ___
 * Adobe Photoshop
 * Chrome
 * MacDowm
+* Balsamiq
 
 ***
 
