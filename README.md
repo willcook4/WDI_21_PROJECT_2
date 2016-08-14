@@ -1,5 +1,7 @@
 # Aught 
-### Borrow something, anything and everything from your local communityHow
+### Borrow something, anything and everything from your local community.
+
+![alt text](http://aughtapp.s3.amazonaws.com/uploads/AughtScreenShot.png "Aught Screenshot")
 
 #####What is Aught?
 Aught is a concept for a 'thing' sharing website. Users can login and view items that people in their community are sharing and they can share items themselves.
@@ -8,12 +10,20 @@ Many high price items spend much of their time gathering dust. When we all share
 
 **See the live version here <http://aughtapp.herokuapp.com>**
 
+To save registering use email: will@will.com password: password
+
+
 
 #####Planning
 **Trello** 
-Trello was used to plan and track progress.
+Trello was used to plan design descions, user stories and site path mapping.
+
+![alt text](http://aughtapp.s3.amazonaws.com/uploads/Trello2.png "Aught Trello board")
+
+Trello was also used to track progress with development.
 
 ![alt text](http://aughtapp.s3.amazonaws.com/uploads/Trello.png "Aught Trello board")
+
 
 **ERD** 
 
@@ -24,6 +34,7 @@ Draw.io was used to plan the ER Diagrams.
 **Wireframes**
 
 Balsamiq was used to plan the layout of every page.
+e.g. Registration: 
 
 ![alt text](http://aughtapp.s3.amazonaws.com/uploads/wireframes.png "Aught ER Diagram ")
 
@@ -48,8 +59,9 @@ ___
 * Chrome
 * MacDowm
 * Balsamiq
+* Cyberduck
 
-***
+*** 
 
 #####Plans for improvement
 * Implement the search features
