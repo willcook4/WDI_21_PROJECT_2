@@ -3,7 +3,7 @@
 
 ![alt text](http://aughtapp.s3.amazonaws.com/uploads/AughtScreenShot.png "Aught Screenshot")
 
-#####What is Aught?
+##### What is Aught?
 Aught is a concept for a 'thing' sharing website. Users can login and view items that people in their community are sharing and they can share items themselves.
 
 Many high price items spend much of their time gathering dust. When we all share we all buy less stuff. Then when we do buy something then we can spend more on items that are better. In short when we share the world becomes a better place.
@@ -14,7 +14,8 @@ To save registering use email: will@will.com password: password
 
 
 
-#####Planning
+##### Planning
+
 **Trello** 
 Trello was used to plan design descions, user stories and site path mapping.
 
@@ -40,7 +41,8 @@ e.g. Registration:
 
 ___
 
-#####Technology used
+##### Technology used
+
 * Ruby
 * Ruby on Rails
 * JQuery / Javascript
@@ -61,9 +63,8 @@ ___
 * Balsamiq
 * Cyberduck
 
-*** 
+##### Plans for improvement
 
-#####Plans for improvement
 * Implement the search features
 * Add responsive formats to the pages to be more mobile friendly
 * Make the seed file more colourful with more detailed content for things and profiles.
@@ -72,10 +73,8 @@ ___
 * Add the locations model to the app and extend the users to be location aware. i.e. only show things in a certain distance of their profile location.
 * Add email reovery for passwords.  
 
-***
-***
+#### What you need to do to get the app up and running locally:
 
-####What you need to do to get the app up and running locally:
 
 1. Clone from github
 2. Run ```bundle``` from the terminal to get the correct gems
